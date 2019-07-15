@@ -1,0 +1,27 @@
+.join-us
+    .join-us__title Прикоснитесь  
+        br
+        | к мусульманским 
+        br
+        | святыням
+
+    form.join-us__form(action="" method="get")
+        .join-us__item
+            label.join-us__label Имя
+            input.join-us__input(type="text" value="Ирек" placeholder="Ваше имя")
+        .join-us__item
+            label.join-us__label Телефон
+            input.join-us__input#phone(type="text" value="+7 999 999-99-99" placeholder="Ваш телефон")
+        .join-us__item
+            label.join-us__label Эл. почта
+            input.join-us__input(type="text" value="irek.gimadeev@gmail.com" placeholder="Ваш адрес электронной почты")
+        .join-us__item
+            label.join-us__label Комментарий
+            textarea.join-us__textarea(rows='1' placeholder="Пример того, что обычно пишут")
+
+        .join-us__item
+            + ui-checkbox('checkbox--align-top','Я даю согласие на обработку персональных данных.')
+            button.button.button--caret.button--w212(type="submit") Отправить
+
+    .join-us__alert
+        + thanks-done('thanks-done--large')

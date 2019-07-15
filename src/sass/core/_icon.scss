@@ -1,0 +1,356 @@
+@font-face {
+  font-family: '#{$icon-font-family}';
+  src: url('#{$icon-font-path}/#{$icon-font-family}.eot?1g0fkc');
+  src: url('#{$icon-font-path}/#{$icon-font-family}.eot?1g0fkc#iefix') format('embedded-opentype'),
+  url('#{$icon-font-path}/#{$icon-font-family}.ttf?1g0fkc') format('truetype'),
+  url('#{$icon-font-path}/#{$icon-font-family}.woff?1g0fkc') format('woff'),
+  url('#{$icon-font-path}/#{$icon-font-family}.svg?1g0fkc##{$icon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="mti-"], [class*=" mti-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mti-hotel {
+  &:before {
+    content: $mti-hotel;
+  }
+}
+
+.mti-video-play {
+  &:before {
+    content: $mti-video-play;
+  }
+}
+
+.mti-arrow-prev {
+  &:before {
+    content: $mti-arrow-prev;
+  }
+}
+
+.mti-arrow-next {
+  &:before {
+    content: $mti-arrow-next;
+  }
+}
+
+.mti-syringe {
+  &:before {
+    content: $mti-syringe;
+  }
+}
+
+.mti-moon-star {
+  &:before {
+    content: $mti-moon-star;
+  }
+}
+
+.mti-air-line {
+  &:before {
+    content: $mti-air-line;
+  }
+}
+
+.mti-menu {
+  &:before {
+    content: $mti-menu;
+  }
+}
+
+.mti-soc-fb-sec {
+  &:before {
+    content: $mti-soc-fb-sec;
+  }
+}
+
+.mti-symbol {
+  &:before {
+    content: $mti-symbol;
+  }
+}
+
+.mti-chat {
+  &:before {
+    content: $mti-chat;
+  }
+}
+
+.mti-check {
+  &:before {
+    content: $mti-check;
+  }
+}
+
+.mti-air {
+  &:before {
+    content: $mti-air;
+  }
+}
+
+.mti-people-gp {
+  &:before {
+    content: $mti-people-gp;
+  }
+}
+
+.mti-bus {
+  &:before {
+    content: $mti-bus;
+  }
+}
+
+.mti-geo {
+  &:before {
+    content: $mti-geo;
+  }
+}
+
+.mti-food {
+  &:before {
+    content: $mti-food;
+  }
+}
+
+.mti-go {
+  &:before {
+    content: $mti-go;
+  }
+}
+
+.mti-arrow-left {
+  &:before {
+    content: $mti-arrow-left;
+  }
+}
+
+.mti-arrow-right {
+  &:before {
+    content: $mti-arrow-right;
+  }
+}
+
+.mti-caret-up {
+  &:before {
+    content: $mti-caret-up;
+  }
+}
+
+.mti-caret-down {
+  &:before {
+    content: $mti-caret-down;
+  }
+}
+
+.mti-caret-right {
+  &:before {
+    content: $mti-caret-right;
+  }
+}
+
+.mti-caret-slip {
+  &:before {
+    content: $mti-caret-slip;
+  }
+}
+
+.mti-close {
+  &:before {
+    content: $mti-close;
+  }
+}
+
+.mti-devider-round {
+  &:before {
+    content: $mti-devider-round;
+  }
+}
+
+.mti-devider {
+  &:before {
+    content: $mti-devider;
+  }
+}
+
+.mti-devider-large {
+  &:before {
+    content: $mti-devider-large;
+  }
+}
+
+.mti-mail {
+  &:before {
+    content: $mti-mail;
+  }
+}
+
+.mti-men {
+  &:before {
+    content: $mti-men;
+  }
+}
+
+.mti-woman {
+  &:before {
+    content: $mti-woman;
+  }
+}
+
+.mti-play {
+  &:before {
+    content: $mti-play;
+  }
+}
+
+.mti-quote {
+  &:before {
+    content: $mti-quote;
+  }
+}
+
+.mti-quote-sec {
+  &:before {
+    content: $mti-quote-sec;
+  }
+}
+
+.mti-document {
+  &:before {
+    content: $mti-document;
+  }
+}
+
+.mti-people {
+  &:before {
+    content: $mti-people;
+  }
+}
+
+.mti-tied-hands {
+  &:before {
+    content: $mti-tied-hands;
+  }
+}
+
+.mti-acropolis {
+  &:before {
+    content: $mti-acropolis;
+  }
+}
+
+.mti-mosque {
+  &:before {
+    content: $mti-mosque;
+  }
+}
+
+.mti-bottle {
+  &:before {
+    content: $mti-bottle;
+  }
+}
+
+.mti-card {
+  &:before {
+    content: $mti-card;
+  }
+}
+
+.mti-services {
+  &:before {
+    content: $mti-services;
+  }
+}
+
+.mti-shield {
+  &:before {
+    content: $mti-shield;
+  }
+}
+
+.mti-coun-bl-gb {
+  &:before {
+    content: $mti-coun-bl-gb;
+  }
+}
+
+.mti-coun-ru-gb {
+  &:before {
+    content: $mti-coun-ru-gb;
+  }
+}
+
+.mti-coun-bl {
+  &:before {
+    content: $mti-coun-bl;
+  }
+}
+
+.mti-coun-ru {
+  &:before {
+    content: $mti-coun-ru;
+  }
+}
+
+.mti-phone {
+  &:before {
+    content: $mti-phone;
+  }
+}
+
+.mti-soc-fb {
+  &:before {
+    content: $mti-soc-fb;
+  }
+}
+
+.mti-soc-in {
+  &:before {
+    content: $mti-soc-in;
+  }
+}
+
+.mti-soc-vk {
+  &:before {
+    content: $mti-soc-vk;
+  }
+}
+
+.mti-soc-wh {
+  &:before {
+    content: $mti-soc-wh;
+  }
+}
+
+.mti-soc-you {
+  &:before {
+    content: $mti-soc-you;
+  }
+}
+
+.mti-star {
+  &:before {
+    content: $mti-star;
+  }
+}
+
+.mti-star-line {
+  &:before {
+    content: $mti-star-line;
+  }
+}
+

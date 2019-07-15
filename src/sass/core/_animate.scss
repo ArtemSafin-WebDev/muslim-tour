@@ -1,0 +1,83 @@
+@include keyframes(loading-round) {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@include keyframes(scaled-in-dec) {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(.92);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(reviewsHover) {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.03);
+  }
+}
+
+
+//@keyframes logo-first-line {
+//  0% {
+//    stroke-dasharray: 140;
+//    stroke-dashoffset: -74;
+//    stroke-width: rem(1);
+//  }
+//  50% {
+//    stroke-dasharray: 760;
+//    stroke-dashoffset: 2;
+//    stroke-width: rem(10);
+//  }
+//  100% {
+//    stroke-dasharray: 140;
+//    stroke-dashoffset: -74;
+//    stroke-width: rem(1);
+//  }
+//}
+
+/*
+@include keyframes(swipe-down) {
+   0% {
+     opacity: 0.75;
+     transform: translateY(-8px);
+   }
+   50% {
+     transform: translateY(15px) scale(.9);
+     opacity: 0.3;
+   }
+   100% {
+     opacity: 0.75;
+     transform: translateY(-8px);
+   }
+ }
+
+@include keyframes(logo-rotete) {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(360deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+*/
+
+
+

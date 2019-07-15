@@ -1,0 +1,144 @@
+.contacts-us {
+  margin-top: rem(80);
+  margin-bottom: rem(80);
+
+  &__title {
+    @extend .title--h2;
+
+    margin-bottom: rem(33);
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: 3fr 1.3fr;
+    grid-column-gap: rem(65);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(50);
+    }
+
+    &--soc {
+      display: inline-flex;
+      align-items: center;
+      flex-flow: row wrap;
+
+      margin-left: rem(45);
+
+      mark {
+        flex: 100%;
+        margin-bottom: rem(13);
+
+        font-size: rem(13);
+      }
+
+      a {
+        color: $color-primary;
+
+        [class*="mti-"] {
+          font-size: rem(22);
+        }
+
+        &:not(:last-child) {
+          margin-right: rem(20);
+        }
+      }
+
+      .mti-soc-vk {
+
+        &:hover {
+          color: #4c75a3;
+        }
+      }
+
+      .mti-soc-in {
+        &:hover {
+          background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      .mti-soc-you {
+        &:hover {
+          color: #c4302b;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: rem(97);
+
+    &-capt {
+      @extend .text--capt;
+      margin-bottom: rem(24);
+    }
+
+    &-sub {
+      @extend .title--h3;
+
+      margin-bottom: rem(13);
+    }
+
+    &-text {
+      max-width: rem(894);
+      margin-bottom: rem(20);
+      line-height: 1.56;
+
+      font-size: rem(16);
+    }
+  }
+
+  @include max-wide(laptop) {
+    &__main {
+      grid-column-gap: rem(46);
+    }
+  }
+
+  @include max-wide(tablet) {
+    &__main {
+      grid-template-columns: auto;
+      grid-row-gap: rem(60);
+    }
+
+    &__sidebar {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    &__item {
+      flex: 1 1 33%;
+
+      &--soc {
+        justify-content: flex-start;
+        margin: 0;
+
+        height: max-content;
+        min-width: rem(260);
+
+        a [class*='mti-'] {
+          font-size: rem(40);
+        }
+
+        mark {
+          flex: 0 1;
+
+          margin-right: rem(30);
+
+          font-size: rem(20);
+          font-weight: bold;
+          line-height: rem(28);
+        }
+      }
+    }
+  }
+
+  @include max-wide(phones) {
+    &__item {
+      min-width: 55%;
+    }
+  }
+}

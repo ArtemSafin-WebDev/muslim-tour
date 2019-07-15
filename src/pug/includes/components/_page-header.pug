@@ -1,0 +1,12 @@
+mixin page-header(title, modif, listMenu, activeItem)
+    .page-header(class=modif)
+        .page-header__content
+            .page-header__crumbs
+                include _crumbs
+
+            .page-header__caption=title
+
+            .page-header__bottom
+                if (listMenu !== null & activeItem !== null)
+                    +tab-menu(listMenu, activeItem)
+                block

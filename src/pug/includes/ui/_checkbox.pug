@@ -1,0 +1,17 @@
+mixin ui-checkbox(modificator,label,onOff)
+    if ((label || modificator) == null)
+        .checkbox
+            input.checkbox__input(type="checkbox")
+            mark.checkbox__mark
+            label.checkbox__label="По умолчанию"
+
+    else if (modificator === 'inactive' || modificator === 'disabled')
+        .checkbox(class=modificator)
+            input.checkbox__input(type="checkbox" disabled)
+            mark.checkbox__mark
+            label.checkbox__label="При disabled"
+    else
+        .checkbox(class=modificator)
+            input.checkbox__input(type="checkbox", checked=onOff )
+            mark.checkbox__mark
+            label.checkbox__label=label

@@ -1,0 +1,54 @@
+.schedule
+    header.schedule__head
+        .schedule__head-item
+            a(href="#tourCalendarModal" data-toggle='modal', data-target='#tourCalendarModal').schedule__head-capt.schedule__head-capt--menu Календарь туров
+
+        .schedule__head-item
+            .schedule__head-capt Ближайшие
+            .schedule__head-tags
+                + ui-tag('tag--small','В феврале')
+                + ui-tag('tag--small','В марте')
+                + ui-tag('tag--small','В апреле')
+                + ui-tag('tag--small','В мае')
+
+        .schedule__head-item
+            .schedule__head-capt В феврале
+            .schedule__head-tags
+                + ui-tag('tag--small','В начале месяца')
+                + ui-tag('tag--small','В конце месяца')
+                + ui-tag('tag--small','На весь месяц ')
+
+        .schedule__head-item
+            .schedule__head-capt Спецпредложения
+            .schedule__head-tags
+                + ui-tag('tag--small tag--icon','Скидки',null,null,null,'%')
+                + ui-tag('tag--small', 'Акции')
+
+    section.schedule__section
+        .schedule__caption В месяц Рамадан
+        .schedule__list
+            .schedule__item
+                + trip-card(0)
+            .schedule__item
+                + trip-card(1)
+            .schedule__item
+                + trip-card(2)
+            .schedule__item
+                + trip-card(3)
+            .schedule__item
+                + trip-card(3.1)
+
+    section.schedule__section
+        .schedule__caption В месяц Рамадан
+        .schedule__list.schedule__list--second
+            .schedule__item
+                + trip-card(4)
+            .schedule__item
+                + trip-card(5)
+            .schedule__item
+                + trip-card(6)
+            .schedule__item
+                + trip-card(7)
+            .schedule__item
+                + trip-card(8)
+

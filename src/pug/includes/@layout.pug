@@ -1,0 +1,23 @@
+include @var
+include @mixin-components
+include @ui-elments.pug
+
+doctype
+html(lang="ru")
+    head
+        block head
+            include head.pug
+    body
+        include inline-svg
+
+        block header
+            include header
+
+        block content
+
+        block footer
+            include footer
+
+        include components/_loader
+        include popups
+        include scripts.pug

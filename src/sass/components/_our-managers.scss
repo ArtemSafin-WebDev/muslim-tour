@@ -1,0 +1,59 @@
+.our-managers {
+  --our-managers-columns-max: #{rem(300)};
+  &__title {
+    @extend .title--h2;
+
+    margin-bottom: rem(61);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--our-managers-columns-min, rem(200)), var(--our-managers-columns-max))); //minmax(rem(200), calc(100% / 5)))
+    grid-gap: var(--our-managers-gap-row, rem(84)) var(--our-managers-gap-column, rem(24));
+
+    justify-content: space-between;
+
+    margin-bottom: rem(89);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icon {
+    margin-bottom: rem(24);
+
+    font-size: rem(74);
+    color: $color-primary;
+  }
+
+  &__capt {
+    margin-bottom: rem(18);
+
+    font-size: rem(20);
+    font-weight: bold;
+    //white-space: nowrap;
+  }
+
+  .contact-link {
+    &:not(:last-child) {
+      margin-bottom: rem(14);
+    }
+  }
+
+  @include max-wide(laptop) {
+    --our-managers-columns-max: #{rem(240)};
+  }
+
+  @include max-wide(tablet) {
+    --our-managers-gap-row: #{rem(60)};
+    --our-managers-columns-max: calc((100% / 3) - #{rem(24*2)});
+  }
+
+  @include max-wide(phones) {
+    --our-managers-gap-column: #{rem(16)};
+    --our-managers-columns-min: min-content;
+    --our-managers-columns-max: calc((100% / 2) - var(--our-managers-gap-column));
+  }
+}

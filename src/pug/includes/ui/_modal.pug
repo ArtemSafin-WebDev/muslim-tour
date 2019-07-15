@@ -1,0 +1,5 @@
+mixin ui-modal(id, modifer)
+    .modal.fade(id=id, class=modifer, tabindex='-1' role='dialog' aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal__content
+                block

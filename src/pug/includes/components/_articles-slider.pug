@@ -1,0 +1,14 @@
+.articles-slider
+    .articles-slider__title Другие статьи
+
+    .articles-slider__swiper.swiper--articles
+        .swiper-nav
+            button(type="button").swiper-button-prev.button--prev
+            button(type="button").swiper-button-next.button--next
+
+        .swiper-container
+            .swiper-wrapper
+                each i in randomArr3
+                    each item in articlesCardsList
+                        .swiper-slide
+                            + articles-card(item.title, item.text, item.bg)

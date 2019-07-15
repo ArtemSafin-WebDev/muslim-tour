@@ -1,0 +1,66 @@
+.contact-link {
+  --contact-link-spacer: #{rem(47)};
+  --contact-link-icon-size: #{rem(26)};
+  --contact-link-icon-top-pos: #{rem(2)};
+
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: column;
+
+  padding-left: var(--contact-link-spacer);
+
+
+  a:hover {
+    color: $color-secondary;
+    .contact-link__name, [class*='mti-'], [class*='icon-'] {
+      color: $color-secondary;
+    }
+    .contact-link__name {
+      @include artificial-thickness(rem(0.1), $color-secondary)
+    }
+
+    [class*='mti-'], [class*='icon-'] {
+      transform: scale(1.1);
+    }
+  }
+
+  &__name {
+    @extend .text--capt ;
+
+    margin-bottom: rem(11);
+
+    font-weight: bold;
+  }
+
+  &__text {
+    @extend .text--addit;
+
+    color: #6a6a6a;
+  }
+
+  [class*='mti-'], [class*='icon-'] {
+    position: absolute;
+    top: var(--contact-link-icon-top-pos);
+    left: 0;
+
+    font-size: var(--contact-link-icon-size);
+    color: $color-primary;
+
+    transition: .3s ease-in-out;
+  }
+
+  &--small {
+    --contact-link-spacer: #{rem(27)};;
+    --contact-link-icon-size: #{rem(18.6)};
+
+    --contact-link-icon-top-pos: #{rem(5)};
+
+    .contact-link__name {
+      margin-bottom: rem(4);
+
+      font-size: rem(16);
+      font-weight: normal;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.divider {
+  display: flex;
+  flex-direction: column;
+
+  &:after, &--long:after {
+    display: block;
+
+    max-height: rem(38);
+
+    margin-top: rem(10);
+
+    color: $color-primary;
+    line-height: var(--divider-height, 1) !important;
+
+    overflow: hidden;
+  }
+
+  &:after {
+    @include pseudo-icon($mti-devider, var(--divider-size, rem(38)));
+  }
+
+  &--long {
+    &:after {
+      @include pseudo-icon($mti-devider-large, var(--divider-size-long, rem(48)));
+    }
+  }
+
+  @include max-wide(phones) {
+    //--divider-size: #{rem()};
+    &:after, &--long:after {
+      --divider-size-long: #{rem(45.16)};
+      --divider-size: #{rem(45.16)};
+      --divider-height: 0.5;
+
+      transform: scaleY(.8);
+    }
+  }
+
+}

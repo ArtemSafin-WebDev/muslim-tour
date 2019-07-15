@@ -1,0 +1,5 @@
+mixin contact-link(icon, link, capt, text, modif)
+    a.contact-link(class=modif href=link)
+        i(class='mti-' + icon)
+        span.contact-link__name=capt
+        mark.contact-link__text=text

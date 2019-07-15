@@ -1,0 +1,26 @@
+article.video-slider
+    .swiper--video
+        .swiper-container
+            .swiper-top
+                .swiper-wrapper
+                    each item in randomArr10
+                        .swiper-slide()
+                            iframe.swiper-slide__frame(width="100%" height="100%" src="https://www.youtube.com/embed/TZhw5PMu690" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+                        .swiper-slide()
+                            img.swiper-slide__img(src="/img/trip-3.jpg")
+                        .swiper-slide()
+                            img.swiper-slide__img(src="/img/trip-2.jpg")
+
+                .swiper-nav
+                    button(type="button").swiper-button-prev
+                    button(type="button").swiper-button-next
+
+            .swiper-thumbs
+                .swiper-wrapper
+                    each item in randomArr10
+                        .swiper-slide()
+                            iframe.swiper-slide__frame(width="100%" height="100%" src="https://www.youtube.com/embed/TZhw5PMu690" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+                        .swiper-slide()
+                            img.swiper-slide__img(src="/img/trip-3.jpg")
+                        .swiper-slide()
+                            img.swiper-slide__img(src="/img/trip-2.jpg")

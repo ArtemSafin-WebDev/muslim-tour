@@ -1,0 +1,12 @@
+.reviews
+    .reviews__list
+        .reviews__item
+            button.button.button--caret.button--w277(type="button") Написать отзыв
+            
+        each item in reviewsList
+            .reviews__item
+                - var  reviewsCardImg=item.img , reviewsCardName=item.name ,reviewsCardText=item.text
+                include _reviews-card
+            
+    .reviews__more
+        include  _loader-more

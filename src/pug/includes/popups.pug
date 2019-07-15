@@ -1,0 +1,37 @@
+.modals
+    // Modal window style to tour calendar
+    + ui-modal('tourCalendarModal','')
+        header.modal__header
+            .modal__title Календарь туров
+            button.button--close(type='button' data-dismiss='modal' aria-label='Close' aria-hidden='true') Закрыть
+
+        article.modal__body
+            include components/_tour-calendar
+
+    // Modal window style to join-us
+    + ui-modal('joinUsModal','modal--join-us')
+        header.modal__header
+            .modal__title Прикоснитесь к мусульманским святыням
+            .modal__description Оставьте заявку и мы вам перезвоним в течении 15 минут.
+            button.button--close(type='button' data-dismiss='modal' aria-label='Close' aria-hidden='true') Закрыть
+
+        article.modal__body
+            include components/_join-us--in-modal
+
+    // Modal window style to thanks
+    + ui-modal('thanksDoneModal','modal--thanks-done')
+        button.button--close(type='button' data-dismiss='modal' aria-label='Close' aria-hidden='true') Закрыть
+
+        article.modal__body
+            + thanks-done
+
+//- Modal window style to
+//- + ui-modal('thankOrderModal','modal--w460')
+   header.modal__header                   a
+       .modal__title
+       button.button--close(type='button' data-dismiss='modal' aria-label='Close' aria-hidden='true')
+
+   article.modal__body
+
+   footer.modal__footer
+      button.button.button--xs.button--cap(type="text" data-dismiss='modal' aria-label='Close' aria-hidden='true') Close

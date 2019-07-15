@@ -1,0 +1,74 @@
+.quote {
+  --quote-spacer: #{ rem(21)};
+
+  position: relative;
+
+  display: flex;
+
+  margin: 0 0 var(--quote-gutter-b, rem(85));
+  padding: var(--quote-spacer) 0;
+
+  font-style: italic;
+  font-size: rem(18);
+  line-height: rem(30);
+
+  &:before {
+    position: absolute;
+
+    @include pseudo-icon($mti-quote, 12);
+    color: $color-primary;
+  }
+
+  &:not(&--parg):not(&--line) {
+    box-shadow: inset 0 rem(-1) 0 0 $color-primary, inset 0 rem(1) 0 0 $color-primary;
+
+    &:before {
+      top: 0;
+      left: 50%;
+
+      width: rem(44);
+
+      text-align: center;
+      font-style: normal;
+
+      background-color: $color-light;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--parg {
+    &:before {
+      top: var(--quote-spacer);
+      left: 0;
+
+      font-size: rem(20);
+      font-style: normal;
+    }
+  }
+
+  &--parg, &--line {
+    padding-left: rem(54);
+  }
+
+  &--line {
+    font-style: normal;
+    font-size: rem(19);
+
+    &:before {
+      top: var(--quote-spacer);
+      left: 0;
+      bottom: var(--quote-spacer);
+
+      content: '';
+
+      width: rem(4);
+
+      background-color: $color-primary;
+    }
+  }
+
+  @include max-wide(phones) {
+    --quote-gutter-b: #{rem(40)};
+    --quote-spacer: #{rem(18)};
+  }
+}

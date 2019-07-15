@@ -1,0 +1,24 @@
+.gallery-detail {
+  &__title {
+    @extend .title--h2;
+
+    margin-bottom: rem(53);
+
+    //line-height: 0.9;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr));
+    grid-auto-rows: minmax(rem(300), 1fr);
+    grid-auto-flow: dense;
+
+    grid-gap: rem(25);
+
+    margin-bottom: rem(30);
+  }
+
+  &__nav {
+    margin-bottom: rem(159);
+  }
+}

@@ -1,0 +1,74 @@
+.title {
+  @extend .fn-primary;
+
+  &, &--h2, &--h3 {
+    font-weight: bold;
+  }
+
+  font-size: rem(55);
+  line-height: rem(49);
+
+  &--h2 {
+    font-size: var(--title-h2-size, rem(30));
+    line-height: var(--title-h2-height, normal);
+
+    margin-bottom: rem(33);
+  }
+
+  &--h3 {
+    font-size: rem(16);
+    line-height: 1.69;
+    //margin-bottom: rem(20);
+  }
+}
+.text {
+  font-size: rem(17);
+  line-height: rem(25);
+
+  &--capt {
+    font-size: rem(20);
+    line-height: rem(28);
+  }
+
+  &--addit {
+    font-size: rem(13);
+    line-height: rem(19);
+  }
+
+  &--sec {
+    font-size: rem(16);
+    line-height: 1.69;
+  }
+
+  &--birk {
+    font-weight: bold;
+    font-size: rem(13);
+    letter-spacing: $letterSpacing;
+    color: $color-primary;
+    text-transform: uppercase;
+  }
+
+  &--pdd32 {
+    margin-bottom: rem(32);
+  }
+
+  @include max-wide(tablet) {
+  }
+}
+
+.fn-primary {
+  font-family: $font-family-primary;;
+}
+
+.fn-secondary {
+  font-family: $font-family-secondary;
+}
+
+
+@include max-wide(phones) {
+  :root {
+    --title-h2-size: #{rem(25.44)};
+    --title-h2-height: 1.4;
+  }
+}
+

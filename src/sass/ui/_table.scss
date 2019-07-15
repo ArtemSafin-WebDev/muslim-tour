@@ -1,0 +1,85 @@
+$tableBorder: rem(1) solid #979797;
+$tableHeadBg: var(--cl-gray-fr);
+$tableBg: $tableHeadBg;
+
+$tableTextColor: $color-text;
+$tableHeadTextColor: $color-text;
+
+$tableTemp: (
+        sizingSpecs: 1.4fr 0.8fr 1.5fr
+);
+
+.table {
+  --table-offset: 0;
+  --table-spacer-hor: #{rem(37)};
+  --table-spacer-ver: #{rem(30)};
+  --table-gap: #{rem(60)};
+
+  min-width: rem(370);
+
+  margin: var(--table-spacer-ver) var(--table-offset) 0;
+
+  font-size: rem(14);
+
+  background-color: $tableBg;
+
+  &__head, &__item {
+    display: grid;
+    grid-template-columns: map-get($tableTemp, sizingSpecs);
+    grid-template-rows: 100%;
+
+    grid-gap: var(--table-gap);
+
+    width: auto;
+
+    margin: 0 var(--table-spacer-hor);
+
+    padding: var(--table-spacer-ver) 0;
+  }
+
+  &__head {
+    min-height: rem(32);
+
+    padding-bottom: rem(22);
+
+    font-weight: bold;
+    font-size: rem(13);
+    letter-spacing: $letterSpacing;
+    color: $color-primary;
+    text-transform: uppercase;
+  }
+
+  &__main {
+
+  }
+
+  &__item {
+    min-height: rem(40);
+
+    color: $tableTextColor;
+
+    border-top: $tableBorder;
+  }
+
+  &__foot {
+    padding: $contentGutter;
+  }
+
+  @include min-wide(notebookLg) {
+    --table-offset: calc(-0px - var(--table-spacer-hor))
+  }
+
+  @include max-wide(tablet) {
+    --table-spacer-hor: #{rem(32)};
+    --table-spacer-ver: #{rem(25)};
+    --table-gap: #{rem(40)};
+  }
+
+  @include max-wide(phones) {
+    --table-offset: calc(-0px - var(--content-padding));
+
+    --table-spacer-hor: var(--content-padding);
+    --table-spacer-ver: #{rem(20)};
+    --table-gap: #{rem(30)};
+  }
+}

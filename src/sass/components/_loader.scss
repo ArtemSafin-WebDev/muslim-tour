@@ -1,0 +1,38 @@
+.loader {
+  position: fixed;
+  top: rem(-30);
+  right: rem(-30);
+  bottom: rem(-30);
+  left: rem(-30);
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $background-gray-light;
+
+  transition: transform 0s ease-in-out;
+
+  &:not(&--open) {
+    transform: translate(0, -150vh);
+    transition-duration: 1s;
+  }
+  svg {
+    animation: scaled-in-dec 2.6s infinite forwards;
+    filter: drop-shadow(0 rem(0) rem(120) var(--cl-gray-th));
+  }
+}
+
+//#icn-logo {
+//  path {
+//    &:first-child {
+//      stroke: $color-primary;
+//      animation: 6s logo-first-line linear infinite forwards;
+//    }
+//
+//    &:last-child {
+//
+//    }
+//  }
+//}

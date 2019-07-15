@@ -1,0 +1,8 @@
+mixin tab-menu(listMenu,activeItem)
+    .tab-menu
+        .tab-menu__content
+            each item, index in listMenu
+                if (index === activeItem)
+                    a.tab-menu__tab.tab-menu__tab--is-active(href=item.link)=item.name
+                else
+                    a.tab-menu__tab(href=item.link)=item.name

@@ -1,0 +1,66 @@
+.our-task {
+  position: relative;
+
+  height: var(--our-task-height, rem(813));
+
+  margin: var(--our-task-offest-v, rem(150)) var(--our-task-offest-h, 0);
+  padding: var(--our-task-spacer-v, rem(100)) var(--our-task-spacer-h, rem(125));
+
+  color: $color-light;
+
+  background: $our-task-bg no-repeat top center;
+  background-size: cover;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    content: '';
+
+    background: $dark-blue-grad;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__capt {
+    @extend .text--birk;
+
+    margin-bottom: rem(7);
+  }
+
+  &__title {
+    @extend .title--h2;
+  }
+
+  &__text {
+    max-width: rem(456);
+    margin-bottom: $contentGutter;
+  }
+
+  @include max-wide(laptop) {
+    --our-task-height: #{rem(620)};
+  }
+
+  @include max-wide(tablet) {
+    --our-task-height: #{rem(520)};
+
+    --our-task-offest-v: #{rem(100)};
+    --our-task-offest-h: calc(-0px - var(--content-padding));
+
+    --our-task-spacer-v: #{rem(45)};
+    --our-task-spacer-h: var(--content-padding);
+  }
+
+  @include max-wide(phones) {
+    --our-task-height: #{rem(400)};
+    --our-task-offest-v: #{rem(60)};
+
+    background-position-x: 80%;
+  }
+}

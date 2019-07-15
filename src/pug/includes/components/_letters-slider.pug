@@ -1,0 +1,17 @@
+.letters-slider
+    .letters-slider__title Отзывы и благодарственные письма
+
+    .letters-slider__swiper.swiper--letters
+        .swiper-nav
+            button(type="button").swiper-button-prev.button--prev
+            button(type="button").swiper-button-next.button--next
+
+        .swiper-container
+            .swiper-wrapper
+                each item in sliderLettersList
+                    .swiper-slide
+                        a(href=item.img2x  data-fancybox='gallery' data-width="1536" data-height="2304")
+                            img.swiper-slide__image(src=item.img srcset=item.img2x)
+
+    .letters-slider__bottom
+        //a.button.button--caret.button--w212(href=lnNews) Все новости

@@ -1,0 +1,60 @@
+.articles-card {
+  --articles-card-bg: #{$blue-bg} repeat-x;
+
+  display: inline-flex;
+
+  //max-width: rem(456);
+  //min-width: rem(200);
+  width: var(--articles-card-width);
+  height: rem(215);
+
+  background: var(--articles-card-bg) center center /cover;
+
+  transition: transform .3s ease-in-out;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &__content {
+    display: inherit;
+    flex-flow: column;
+
+    height: 100%;
+
+    padding: var(--articles-card-spacer, rem(36));
+
+    color: $color-light;
+
+    overflow: hidden;
+  }
+
+  &__capt {
+    @extend .text--capt ;
+
+    max-height: rem(54);
+    margin-bottom: rem(17);
+
+    overflow: hidden;
+  }
+
+  &__desc {
+    @extend .text--addit;
+
+    height: rem(60);
+
+    line-height: 1.54;
+  }
+
+  &[style*='--articles-card-bg:'] {
+    .articles-card__content {
+      background-color: var(--cl-black-50);
+    }
+  }
+
+  @include max-wide(phones) {
+    --articles-card-spacer: #{rem(28)};
+    --articles-card-width: 80vw;
+  }
+}

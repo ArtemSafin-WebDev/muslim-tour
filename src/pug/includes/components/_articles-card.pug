@@ -1,0 +1,7 @@
+mixin articles-card(capt,text,img)
+    if (img !== '')
+        - var articlesCardImgVar="--articles-card-bg: url('" + img + "')";
+    a.articles-card(href="#" style=articlesCardImgVar)
+        span.articles-card__content
+            strong.articles-card__capt=capt
+            mark.articles-card__desc=text

@@ -1,0 +1,275 @@
+.join-us {
+  $gutter-item: rem(34);
+
+  --join-us-border: #{rem(1) solid rgba(#000000, 0.4)};
+  //--join-us-offset: calc(0rem - var(--content-padding));
+
+  &:not(&--in-modal) {
+    position: relative;
+    z-index: 1;
+
+    justify-content: space-between;
+
+    //margin-right: var(--join-us-offset);
+    padding: rem(80) 0;
+
+    background-color: var(--cl-gray-sc);
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 99%;
+      bottom: 0;
+      left: -100%;
+      z-index: -1;
+
+      content: '';
+
+      background-color: inherit;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: rem(43);
+
+      width: rem(317);
+      height: rem(424);
+      content: '';
+
+      background: url('/img/sob.png') no-repeat top left;
+    }
+
+    .join-us__title {
+      margin-top: rem(4);
+    }
+  }
+
+  &, &__title, &__item {
+    display: flex;
+  }
+
+  &__title {
+    @extend .title--h2;
+
+    line-height: rem(41);
+
+    &:before {
+      margin: rem(-29) rem(25) 0 0;
+
+      @include pseudo-icon($mti-devider-round, 65);
+
+      color: $color-primary;
+    }
+  }
+
+  &__form {
+    flex: 1 1;
+
+    padding-right: rem(75);
+    max-width: rem(753);
+  }
+
+  &__item {
+    line-height: 1;
+
+    border-top: var(--join-us-border);
+
+    &:last-child {
+      justify-content: space-between;
+
+      padding-top: rem(40);
+
+      .checkbox {
+        max-width: rem(300);
+        margin: auto rem(20) auto 0;
+      }
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+
+    width: rem(150);
+
+    padding: $gutter-item 0;
+
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: rem(1.9);
+
+    border-right: rem(1) solid var(--cl-black);
+
+    opacity: 0.4;
+  }
+
+  &__input, &__textarea {
+    padding: 0 rem(22);
+
+    font-size: rem(17);
+
+    background-color: transparent;
+
+    border: none;
+
+    @include placeholder {
+      color: rgba(#000, 0.1);
+    }
+  }
+
+  &__textarea {
+    flex: 1;
+
+    height: rem(196);
+
+    padding-top: rem(28);
+
+    line-height: normal;
+  }
+
+  &--in-modal {
+    flex-direction: column;
+
+    .join-us__form {
+      padding: 0;
+    }
+  }
+
+  &__alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--cl-gray-sc);
+
+    transition: opacity .5s ease-in, transform .8s ease-out;
+
+    &:not(&--show) {
+      transform: translateX(-110%);
+      opacity: 0;
+    }
+  }
+
+  @include max-wide(tablet) {
+    &__title {
+      margin-right: rem(30);
+    }
+
+    &__form {
+      max-width: none;
+
+      padding-right: 0;
+    }
+
+    &:not(&--in-modal) {
+      position: relative;
+      z-index: 1;
+
+      flex-flow: column;
+
+      padding-top: rem(30.5);
+
+      background: none;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        right: calc(-0px - var(--content-padding));
+        bottom: 14%;
+        left: calc(-0px - var(--content-padding));
+        z-index: -1;
+
+        content: '';
+
+        background-color: var(--cl-gray-sc);
+      }
+
+      &:after {
+        position: absolute;
+        top: rem(0);
+        left: auto;
+        right: 0;
+        z-index: -1;
+
+        width: 100%;
+        height: rem(257);
+
+        border-bottom: $border;
+        background: url('/img/sob-mob.png') no-repeat bottom right;
+        background-size: rem(134);
+      }
+
+      .join-us__title {
+        margin-top: rem(4);
+        margin-bottom: rem(73.6);
+
+      }
+    }
+
+    &__title {
+      flex-flow: column-reverse;
+
+      &:before {
+        margin: rem(23) 0 0 0;
+
+        font-size: rem(56.8);
+        line-height: unset;
+      }
+    }
+
+    &__item {
+      flex-flow: column;
+
+      padding: rem(22) 0 rem(14);
+
+      &:first-child {
+        border-top: none;
+      }
+
+      .button--caret {
+        margin: rem(72) 0 0 auto;
+      }
+    }
+
+    &__label {
+      padding: 0 0 rem(9.6);
+
+      border-right: none;
+    }
+
+    &__input {
+      padding: 0;
+    }
+
+    &__textarea {
+      height: rem(20);
+
+      padding: 0;
+    }
+
+    &--in-modal {
+      width: auto;
+
+      .button--caret {
+        margin-top: rem(40);
+      }
+    }
+  }
+
+  @include max-wide(phones) {
+    &--in-modal {
+      width: max-content;
+      
+      .button--caret {
+        margin-top: rem(30);
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.hint {
+  display: flex;
+
+  width: 100%;
+
+  margin: var(--hint-offset, 0 0 rem(85));
+  padding: var(--hint-spacer, rem(48));
+
+  font-size: rem(18);
+  line-height: 1.67;
+  color: $color-light;
+
+  background: var(--hint-bg, $blue-bg);
+
+  &--gray {
+    --hint-bg: var(--cl-gray-sc);
+
+    color: initial;
+  }
+
+  @include max-wide(tablet) {
+    --hint-offset: #{ 0 0 rem(65)};
+    --hint-spacer: #{rem(38)};
+  }
+
+  @include max-wide(phones) {
+    --hint-offset: #{0 0 rem(50)};
+    --hint-spacer: #{rem(36)};
+  }
+}

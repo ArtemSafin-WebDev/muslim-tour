@@ -1,0 +1,18 @@
+.trips-slider
+    .trips-slider__title Другие программы
+
+    .trips-slider__swiper.swiper--trips
+        .swiper-nav
+            button(type="button").swiper-button-prev.button--prev
+            button(type="button").swiper-button-next.button--next
+
+        .swiper-container
+            .swiper-wrapper
+                each item in randomArr5
+                    .swiper-slide
+                        + trip-card(3)
+                    .swiper-slide
+                        + trip-card(2)
+                    .swiper-slide
+                        + trip-card(3.1)
+

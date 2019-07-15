@@ -1,0 +1,39 @@
+.contacts-us
+    h2.contacts-us__title Офис в Москве
+
+    section.contacts-us__main
+
+        article.contacts-us__map
+            include _map
+
+        aside.contacts-us__sidebar
+            .contacts-us__item
+                + contact-link('phone','tel:+7 (960) 044-57-85','+7 (960) 044-57-85','Бесплатный звонок по России')
+            .contacts-us__item
+                + contact-link('soc-wh','tel:+7 (960) 044-57-85','+7 (960) 044-57-85','Mobile, Whatsapp, Viber')
+            .contacts-us__item
+                + contact-link('mail','mailto:muslim_tour@mt.ru','muslim_tour@mt.ru','E-mail адрес')
+            .contacts-us__item
+                + contact-link('geo','#','1-ая Тверская-Ямская 25/1 этаж 4, офис 4, Москва, 125047','В будни с 10:00 до 18:00')
+            .contacts-us__item.contacts-us__item--soc
+                mark Соцсети
+
+                a(href='')
+                    i.mti-soc-vk
+                a(href='')
+                    i.mti-soc-in
+                a(href='')
+                    i.mti-soc-you
+
+    section.contacts-us__bottom
+        h2.contacts-us__bottom-capt Как добраться
+
+        h3.contacts-us__bottom-sub От станции метро Белорусская
+
+        p.contacts-us__bottom-text Первый вагон из центра, выход из метро через крайние левые турникеты, затем направо по подземному переходу — к ул. Уральская.
+        p.contacts-us__bottom-text
+            | Далее наземным транспортом:
+        p.contacts-us__bottom-text
+            | Автобус 627 до остановки «Поликлиника » (3-я остановка).
+        p.contacts-us__bottom-text
+            | Троллейбусы 32, 41, автобусы 52, 716, до остановки «3-я Парковая улица», затем пешком по ул. Бирюсинка до проходной на территорию.

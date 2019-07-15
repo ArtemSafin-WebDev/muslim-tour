@@ -1,0 +1,122 @@
+//** Meta Pro Light 100
+
+//** Meta Pro Light 300
+
+//** Meta Pro Roman/Normal 400
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-Normal.eot');
+  src: url('#{$font-mp-path}MetaPro-Normal.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-Normal.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-Normal.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-NormalItalic.eot');
+  src: url('#{$font-mp-path}MetaPro-NormalItalic.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-NormalItalic.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-NormalItalic.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-NormalItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+//** Meta Pro Book 500
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-Book.eot');
+  src: url('#{$font-mp-path}MetaPro-Book.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-Book.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-Book.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-Book.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-BookItalic.eot');
+  src: url('#{$font-mp-path}MetaPro-BookItalic.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-BookItalic.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-BookItalic.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-BookItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+//** Meta Pro Medium 600
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-Medium.eot');
+  src: url('#{$font-mp-path}MetaPro-Medium.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-Medium.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-Medium.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-MediumItalic.eot');
+  src: url('#{$font-mp-path}MetaPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-MediumItalic.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-MediumItalic.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-MediumItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+//** Meta Pro bold 700
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-Bold.eot');
+  src: url('#{$font-mp-path}MetaPro-Bold.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-Bold.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-Bold.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-BoldItalic.eot');
+  src: url('#{$font-mp-path}MetaPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-BoldItalic.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-BoldItalic.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+//** Meta Pro  Black 900
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-Black.eot');
+  src: url('#{$font-mp-path}MetaPro-Black.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-Black.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-Black.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-mp;
+  src: url('#{$font-mp-path}MetaPro-BlackItalic.eot');
+  src: url('#{$font-mp-path}MetaPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-mp-path}MetaPro-BlackItalic.woff2') format('woff2'),
+  url('#{$font-mp-path}MetaPro-BlackItalic.woff') format('woff'),
+  url('#{$font-mp-path}MetaPro-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+

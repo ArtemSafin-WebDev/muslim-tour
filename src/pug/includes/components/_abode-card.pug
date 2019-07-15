@@ -1,0 +1,28 @@
+mixin abode-card()
+    .abode-card
+        img.abode-card__image(src="/img/tour-hotel.jpg" srcset="img/tour-hotel@2x.jpg")
+
+        .abode-card__top
+            span.abode-card__place в Медине
+
+            a.abode-card__link(href="#" data-fancybox="gallery")
+                | Фото отеля
+                span.abode-card__link-count 6
+
+        .abode-card__rating
+            + rating-stars(3, 'rating-stars--only-read rating-stars--all-bg')
+
+        a.abode-card__name(href=lnHome) Retaj Al Rayan
+
+        .abode-card__info Эти номера-студио расположены в 15 минутах ходьбы от центрального железнодорожного вокзала и исторического Старого города Кракова. В оформлении использован красный кирпич.
+
+        ul.abode-card__bootom
+            li
+                i.mti-go
+                | 9—12 минут до мечети Аль-Харам
+            li
+                i.mti-food
+                | 1 разовое питание (горячий паёк)
+            li
+                i.mti-hotel
+                | 4-х местный номер

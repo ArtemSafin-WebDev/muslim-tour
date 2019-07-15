@@ -1,0 +1,21 @@
+extends  includes/@layout
+
+prepend head
+    -  pageTitle = 'Отзывы'
+
+block content
+    main.layout
+        section.layout__section
+            + page-header('Умра 2019. Тариф «Все включёно»','page-header--tour',null,null)
+                + fast-bron('fast-bron--in-header')
+
+
+        section.layout__section
+            include includes/components/_tour
+
+        section.layout__section.scroll-hide
+            include includes/components/_trips-slider
+
+        section.layout__section.layout__section--join-us
+            .layout__wrapper
+                include includes/components/_join-us

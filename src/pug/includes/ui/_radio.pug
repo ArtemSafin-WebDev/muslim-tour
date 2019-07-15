@@ -1,0 +1,21 @@
+mixin ui-radio(modificator,label,onOff,id,group)
+    if ((label || modificator) == null)
+        .radio
+            input.radio__input(type="radio")
+            mark.radio__mark
+            label.radio__label="Default State"
+    else if (modificator === 'inactive' || modificator === 'disabled')
+        .radio(class=modificator)
+            input.radio__input(type="radio" disabled)
+            mark.radio__mark
+            label.radio__label="Inactive"
+    else if modificator === 'radio--error'
+        .radio(class=modificator)
+            input.radio__input(type="radio", checked=onOff )
+            mark.radio__mark
+            label.radio__label=label
+    else
+        .radio(class=modificator)
+            input.radio__input(type="radio", checked=onOff, id=id, name=group)
+            mark.radio__mark
+            label.radio__label=label

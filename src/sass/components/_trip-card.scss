@@ -1,0 +1,355 @@
+.trip-card {
+  --trip-card-height: #{rem(448)};
+
+  --trip-card-spacer: #{rem(34)};
+  --trip-card-spacer-t: #{rem(18)};
+  --trip-card-spacer-b: #{rem(40)};
+
+  --trip-card-capt-fn: #{rem(30)};
+  --trip-card-flay-fn: #{rem(13)};
+  --trip-card-desc-fn: #{rem(13)};
+  --trip-card-desc-lh: 1.54;
+  --trip-card-price-fn: #{rem(24)};
+
+  --trip-card-gradient: #{$trip-grad-brown};
+  --trip-card-gradient-opacity: 0.6;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: var(--trip-card-width, auto);
+  min-height: var(--trip-card-height);
+  height: 100%;
+
+  padding: var(--trip-card-spacer-t) var(--trip-card-spacer) var(--trip-card-spacer-b) var(--trip-card-spacer);
+
+  color: $color-light;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  &:hover {
+    .trip-card__bg {
+      transform: scale(1.08);
+    }
+  }
+
+  &__bg {
+    z-index: -1;
+
+    transition: transform .333s ease-in-out;
+    will-change: transform;
+
+    &, &:after {
+      position: absolute;
+      top: rem(-2);
+      right: rem(-2);
+      bottom: rem(-2);
+      left: rem(-2);
+    }
+
+    &:after {
+      z-index: 1;
+
+      content: '';
+
+      background-image: var(--trip-card-gradient);
+
+      opacity: var(--trip-card-gradient-opacity);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: left center;
+
+    color: $color-light;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 0 rem(18);
+
+    font-weight: 600;
+
+    border-bottom: rem(1) solid rgba(#fff, 0.3);
+  }
+
+  &__main {
+    display: inherit;
+    flex-flow: row wrap;
+
+    margin-bottom: auto;
+    padding: rem(30) 0;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__item {
+    height: max-content;
+
+    margin-right: rem(14);
+
+    white-space: nowrap;
+
+    &--plus {
+      padding-top: rem(30);
+
+      font-size: rem(40);
+      font-weight: bold;
+    }
+  }
+
+  &__title {
+    font-size: rem(13);
+    text-transform: uppercase;
+    letter-spacing: rem(2);
+  }
+
+  &__time {
+    @extend .text;
+  }
+
+  &__capt {
+    font-weight: 600;
+    font-size: var(--trip-card-capt-fn);
+    line-height: 1.15;
+  }
+
+  &__flay {
+    font-size: var(--trip-card-flay-fn);
+    font-weight: 600;
+
+    &, &:before {
+      display: inline-flex;
+      align-items: center;
+
+      margin-top: rem(4);
+    }
+
+    &:before {
+      margin-right: rem(8);
+
+      @include pseudo-icon($mti-air, 15)
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__desc {
+    max-width: rem(730);
+
+    margin-top: rem(20);
+
+    font-size: var(--trip-card-desc-fn);
+    line-height: var(--trip-card-desc-lh);
+    white-space: normal;
+
+    opacity: 0.7;
+  }
+
+  &__info {
+    min-width: rem(200);
+
+    padding-right: 8%;
+
+    font-size: rem(13);
+    line-height: 1.15;
+
+    &-item {
+      display: inline-flex;
+      flex-direction: column;
+
+      max-width: rem(100);
+      min-width: rem(54);
+
+      margin: rem(23) rem(21) 0 0;
+
+      &:last-child {
+        margin-right: 0 !important;
+      }
+
+      [class*="mti-"] {
+        margin-bottom: rem(4);
+
+        font-size: rem(18);
+      }
+
+      &--round {
+        align-items: center;
+        justify-content: center;
+
+        width: rem(29);
+        min-width: auto;
+        height: rem(29);
+
+        margin: 0 rem(8) 0 0;
+
+        border-radius: 50%;
+        border: rem(1) solid $color-light;
+
+        overflow: hidden;
+
+        span {
+          display: none
+        }
+
+        [class*="mti-"] {
+          margin-bottom: 0;
+
+          font-size: rem(14);
+        }
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    margin-left: auto;
+
+    font-size: var(--trip-card-price-fn);
+    font-weight: 600;
+    color: var(--cl-green-lg);
+    white-space: nowrap;
+
+    &-tooltip {
+      @extend .text;
+
+      margin-bottom: rem(13);
+
+      color: $color-light !important;
+
+      border-bottom: rem(1) dashed $color-light;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .icon-rouble {
+        font-size: 14px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &--blue {
+    --trip-card-gradient: #{$trip-grad-blue};
+    --trip-card-gradient-opacity: 0.8;
+  }
+
+  &--green {
+    --trip-card-gradient: #{$trip-grad-green};
+    --trip-card-gradient-opacity: 0.9;
+  }
+
+  &--small, &--info-round {
+    .trip-card__info-item {
+      @extend .trip-card__info-item--round;
+    }
+  }
+
+  &--small {
+    --trip-card-spacer: #{rem(24)};
+    --trip-card-capt-fn: #{rem(24)};
+
+    .trip-card__top {
+      padding-bottom: rem(16);
+    }
+
+    .trip-card__main {
+      flex-direction: column;
+
+      padding: rem(38) 0;
+    }
+
+    .trip-card__item--plus {
+      padding: rem(14) 0;
+    }
+
+    .trip-card__price-tooltip {
+      margin-bottom: rem(8);
+    }
+
+    .trip-card__info {
+      min-width: rem(150);
+    }
+
+    @include min-wide(desktopSm) {
+      //--trip-card-height: #{rem(480)};
+    }
+
+    @include max-wide(tablet) {
+      //--trip-card-width: #{rem(240)}
+    }
+  }
+
+  &--large {
+    @include min-wide(laptop) {
+      --trip-card-height: #{rem(635)};
+      --trip-card-spacer: #{rem(51)};
+      --trip-card-spacer-t: #{rem(32)};
+      --trip-card-spacer-b: #{rem(63)};
+
+      --trip-card-capt-fn: #{rem(40)};
+      --trip-card-flay-fn: #{rem(16)};
+      --trip-card-desc-fn: #{rem(16)};
+      --trip-card-desc-lh: 1.69;
+
+      .trip-card__top {
+        padding-bottom: rem(30);
+      }
+
+      .trip-card__main {
+        padding-top: rem(45);
+      }
+
+      .trip-card__flay:before {
+        margin-right: rem(16);
+
+        font-size: rem(20);
+      }
+
+      .trip-card__desc {
+        margin-top: rem(30);
+      }
+    }
+  }
+
+  &--item-wrap {
+    .trip-card__item--plus {
+      width: 100%;
+      padding: rem(8) 0 rem(11);
+    }
+  }
+
+  &--h542 {
+    @include min-wide(desktopSm) {
+      --trip-card-height: #{rem(542)};
+    }
+  }
+
+  @include max-wide(phones) {
+    .trip-card__item--plus {
+      width: 100%;
+      padding: rem(8) 0 rem(11);
+    }
+  }
+}

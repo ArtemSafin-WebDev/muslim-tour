@@ -1,0 +1,300 @@
+extends  includes/@layout
+
+prepend head
+    -  pageTitle = 'UI Guide Page'
+
+    link(rel="stylesheet", href="css/ui.css")
+
+prepend header
+    -  headerClassModifer = 'header--is-dark'
+
+block content
+    main.layout
+        .layout__wrapper
+            section.layout__row
+                .ui__row
+                    h1.ui__title Какрта сайта
+
+                    a(href=lnHome).ui__link.button Главная
+
+                    a(href=lnSchedule).ui__link.button Расписание поездок
+
+                    a(href=lnTour).ui__link.button Тур Умра
+
+                    a(href=lnReviews).ui__link.button Отзывы
+
+                    a(href=lnNews).ui__link.button Новости
+
+                    a(href=lnGallery).ui__link.button Фотогалерея
+
+                    a(href=lnGalleryDetail).ui__link.button Фотогалерея детально
+
+                    a(href=lnPilgrim).ui__link.button Паломнику
+
+                .ui__row
+                    h1.ui__title Модальные окна
+                    .ui__row
+                        .ui__col.ui__col--column
+                            button.button.ui__link(type="button", data-toggle='modal', data-target='#tourCalendarModal') Календарь тутров
+
+                            button.button.ui__link(type="button", data-toggle='modal', data-target='#joinUsModal') Контактная форма
+
+                            button.button.ui__link(type="button", data-toggle='modal', data-target='#thanksDoneModal')  Успешно отправленно
+
+                .ui__row
+                    h1.ui__title События
+
+                    .ui__row
+                        .ui__col.ui__col--column
+                            button.button.ui__link(type="button" onclick="loaderShow()") Лоадер
+
+            section.layout__row
+                .ui__title Ui Гайд
+
+                article
+                    .ui__title Цвета и переменные
+                    .ui__row
+                        .ui__colors
+                            .ui__colors-split
+                                .ui__colors-cards.ui__colors-cards--green
+                                    span
+                                    span
+                                    span
+
+                                .ui__colors-capt Зеленый основной
+
+                                .ui__colors-hex
+                                    span  #59ba26
+                                    span  #c8efb4
+                                    span  #467057
+
+                                .ui__colors-css
+                                    span --cl-green
+                                    span --cl-green-lg
+                                    span --cl-green-dr
+
+                            .ui__colors-split
+                                .ui__colors-cards.ui__colors-cards--blue
+                                    span
+                                    span
+
+                                .ui__colors-capt Синий основной
+
+                                .ui__colors-hex
+                                    span  #040278
+                                    span  #000080
+
+                                .ui__colors-css
+                                    span --cl-blue
+                                    span --cl-blue-lg
+
+                            .ui__colors-split
+                                .ui__colors-cards.ui__colors-cards--black
+                                    span
+                                    span
+                                    span
+                                    span
+
+                                .ui__colors-capt Черный
+
+                                .ui__colors-hex
+                                    span #000000
+                                    span rgba(0, 0, 0, 0.72)
+                                    span rgba(0, 0, 0, 0.54)
+                                    span rgba(0, 0, 0, 0.5)
+
+                                .ui__colors-css
+                                    span --cl-black
+                                    span --cl-black-72
+                                    span --cl-black-54
+                                    span --cl-black-50
+
+                            .ui__colors-split
+                                .ui__colors-cards.ui__colors-cards--gray
+                                    span
+                                    span
+                                    span
+                                    span
+
+                                .ui__colors-capt Серый
+
+                                .ui__colors-hex
+                                    span #d8d8d8
+                                    span #f6f6f6
+                                    span #f4f4f4
+                                    span #fafafa
+
+                                .ui__colors-css
+                                    span --cl-gray
+                                    span --cl-gray-sc
+                                    span --cl-gray-th
+                                    span --cl-gray-fr
+
+                            .ui__colors-split
+                                .ui__colors-cards.ui__colors-cards--addit
+                                    span
+                                    span
+                                    span
+
+                                .ui__colors-capt Дополнительные цвета
+
+                                .ui__colors-hex
+                                    span #ffda1a
+                                    span #f9dc03
+                                    span #d8232a
+
+                                .ui__colors-css
+                                    span --cl-yellow
+                                    span --cl-yellow-lg
+                                    span --cl-red
+
+                article
+                    .ui__title Лого
+                    .ui__row.ui__row--logo
+                        .ui__col
+                            svg
+                                use(href="#icn-logo")
+
+                        .ui__col
+                            svg.icn-white
+                                use(href="#icn-logo")
+
+
+                article
+                    .ui__title Шрифты
+
+                    .ui__row.ui__row--font(style='font-family: "Meta Pro"')
+                        .ui__col(style='font-weight: 400')
+                            div Aa
+                            div(style='font-size: 1rem') Meta Pro Normal/Roman / 400
+
+                        .ui__col(style='font-weight: 500')
+                            div Aa
+                            div(style='font-size: 1rem') Meta Pro book / 500
+
+                        .ui__col(style='font-weight: 600')
+                            div Aa
+                            div(style='font-size: 1rem') Meta Pro Medium / 600
+
+                        .ui__col(style='font-weight: 700')
+                            div Aa
+                            div(style='font-size: 1rem') Meta Pro Bold / 700
+
+                        .ui__col(style='font-weight: 900')
+                            div Aa
+                            div(style='font-size: 1rem') Meta Pro Black / 900
+
+                article
+                    .ui__title Тип текста
+
+                    .ui__row
+                        .ui__col
+                            div.title Заголовок H1 Open Sans Bold 55 / 49
+                            div.title--h2 Заголовок H2 Open Sans Bold 30 / 27
+                            div.title--h3 Заголовок H3 Open Sans Bold 16 / 21
+                            div.text--capt Лид Open Sans Regular 20 / 28
+                            div.text Основной текст Open Sans Regular 17 / 25
+                            div.text--addit Дополнительный текст Open Sans Regular 13 / 19
+                            div.text--birk Бирка Open sans Bold 13 px
+
+                article
+                    .ui__title Иконки
+
+                    .ui__row.ui__row--icons
+                        each i in iconsList
+                            .ui__col
+                                i(class=i)
+                                span=i
+
+                article
+                    .ui__title Элементы форм
+
+                    .ui__col
+                        .ui__row
+                            .text-capt Чекбоксы
+                        .ui__row.ui__row--pdd20
+                            + ui-checkbox
+                            + ui-checkbox('checked','Inactive element')
+                            + ui-checkbox('','Active element',true)
+
+                    .ui__col
+                        .ui__row
+                            .text-capt Mетки / Теги -- в сайдбаре
+
+                        .ui__row.ui__row--blue.ui__row--pdd20
+                            .ui__col--column
+                                + ui-tag
+                            .ui__col--column
+                                + ui-tag('checked')
+                            .ui__col--column
+                                + ui-tag('disabled')
+                        .ui__row
+                            .text-capt Mетки / Теги -- Большие с внутренним блоками
+
+                        .ui__row.ui__row--bg.ui__row--pdd20
+                            .ui__col--column
+                                + ui-tag('tag--large','Из Казани', true)
+                                    span 1 500 $
+                            .ui__col--column
+                                + ui-tag('tag--large','Из Москвы')
+                                    span 1 300 $
+                            .ui__col--column
+                                + ui-tag('tag--large','Из С-Петербурга')
+                                    span 1 500 $
+
+                        .ui__row.ui__row--pdd20
+                            .ui__col--column
+                                + ui-tag('tag--small','В феврале', true)
+                            .ui__col--column
+                                + ui-tag('tag--small','В марте')
+                            .ui__col--column
+                                + ui-tag('tag--small','В апреле')
+                        //.ui__row
+                        //    + ui-checkbox('inactive','Inactive element')
+                        //.ui__row
+                        //    + ui-checkbox('','Active element',true)
+                article
+                    article
+                        .ui__title Тултипы и поповеры для подсказок
+
+                        .ui__col
+                            .ui__row.ui__row--blue.ui__row--pdd20
+                                .ui__col--column
+                                    button.button(type='button', data-toggle='tooltip', data-placement='top', title='Здесь будет текст подсказки')
+                                        | Подсказка с верху
+                                .ui__col--column
+                                    button.button(type='button', data-toggle='tooltip', data-placement='right', title='Здесь будет текст подсказки')
+                                        | Подсказка с права
+                                .ui__col--column
+                                    button.button(type='button', data-toggle='tooltip', data-placement='bottom', title='Здесь будет текст подсказки')
+                                        | Подсказка с низу
+                                .ui__col--column
+                                    button.button(type='button', data-toggle='tooltip', data-placement='left', title='Здесь будет текст подсказки')
+                                        | Подсказка с лева
+
+                            .ui__row.ui__row--blue.ui__row--pdd20.ui__row--tooltips-viawer
+                                .ui__col
+                                    .tooltip.bs-tooltip-top(role='tooltip')
+                                        .arrow
+                                        .tooltip-inner
+                                            | Здесь будет текст подсказки
+
+                                .ui__col
+                                    .tooltip.bs-tooltip-bottom(role='tooltip')
+                                        .arrow
+                                        .tooltip-inner
+                                            | Здесь будет текст подсказки
+
+                                .ui__col
+                                    .tooltip.bs-tooltip-left(role='tooltip')
+                                        .arrow
+                                        .tooltip-inner
+                                            | Здесь будет текст подсказки
+                                .ui__col
+                                    .tooltip.bs-tooltip-right(role='tooltip')
+                                        .arrow
+                                        .tooltip-inner
+                                            | Здесь будет текст подсказки
+
+block footer
+    //include includes/components/_loader

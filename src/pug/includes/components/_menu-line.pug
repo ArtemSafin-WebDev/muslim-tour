@@ -1,0 +1,7 @@
+nav.menu-line
+    .menu-line__top
+        a.menu-line__link.menu-line__link--is-active(href="#") Хадж
+        a.menu-line__link(href="#") Умра
+    .menu-line__bottom
+        each item in subMenuList
+            a.menu-line__link(href=item.link)=item.name

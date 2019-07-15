@@ -1,0 +1,11 @@
+section.gallery
+    each i in randomArr3
+        article.gallery__section
+            .gallery__caption Мекка
+            .gallery__description Поломники из Казани посещают исторические места
+
+            .gallery__list
+                each item in galleryCardsList
+                    .gallery__item
+                        + gallery-card('',item.img, item.name, item.counter)
+

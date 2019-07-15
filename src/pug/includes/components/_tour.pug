@@ -1,0 +1,76 @@
+article.tour
+    section.tour__section.tour__section--description
+        .tour__inner
+            .tour__title Описание
+
+            p.tour__text.
+                Самая дешёвая программа в России для тех, кто хочет совершить Умру с премиальными условиями в середине апреля, но в то же время не переплачивая за тур — идеальное соотношение цены и качества. Умра, или малый хадж – означает паломничество в Мекку в установленном порядке. Дословно с арабского языка слово ‘умра переводится как “посещение, визит
+
+    section.tour__section.tour__section--route
+        .tour__inner
+            .tour__title Маршрут
+
+            .tour__route
+                include _tour-route
+
+    section.tour__section.tour__section--hotel
+        .tour__inner
+            .tour__title Проживание
+
+            .tour__abode
+                + abode-card()
+                + abode-card()
+
+    section.tour__section.tour__section--to-sides.tour__section--gray
+        .tour__inner
+            .tour__left
+                .tour__title.tour__title--line
+                    | В стоимость
+                    br
+                    | также входит
+
+            .tour__right
+                ul.tour__list.tour__list--in-cost
+                    each item in listInCost
+                        li
+                            strong=item.title
+                            p=item.text
+
+    section.tour__section.tour__section--to-sides
+        .tour__inner
+            .tour__left
+                .tour__title.tour__title--line
+                    | Перечень необходимых
+                    br
+                    | документов
+
+            .tour__right
+                ul.tour__list.tour__list--of-docs
+                    li
+                        i.mti-card
+                        p <b>Заграничный паспорт</b> биометрический нового образца сроком  действия не менее 6 месяцев.
+
+                    li
+                        i.mti-coun-ru-gb
+                        i.mti-coun-ru
+                        p <b>Копия общегражданского паспорта РФ</b> (страница с фото и страница с регистрацией)
+
+                    li
+                        i.mti-syringe
+                        p Сертификат о наличии <b>прививки против менингита</b> (4-х компонентная вакцина)
+
+                    li
+                        i.mti-moon-star
+                        p <b>Для неэтнических мусульман</b>: свидетельство о принятии Ислама
+
+                    li
+                        i.mti-people
+                        p  <b>Для женщин</b> документ (оригинал), подтверждающий степень родства с махрамом.  (Для супругов <b>оригиналы свидетельства о браке + паспорт РФ</b> с печатью ЗАГС,  для сестер и дочерей - свидетельство о рождении)
+
+                    li
+                        i.mti-coun-bl-gb
+                        i.mti-coun-bl
+                        p <b>Для граждан Белоруссии</b>: 2 цветные фотографии 4х6 на белом фоне (женщинам в платке).
+    section.tour__section.tour__section--bron
+        .tour__inner
+            + fast-bron

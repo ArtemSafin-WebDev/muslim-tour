@@ -1,0 +1,11 @@
+mixin ui-input(modificator,label,type,placeholder,msg,value)
+    if ((label || type || placeholder || msg || modificator) == null)
+        .input(class='' + modificator)
+            label.input__label="Метка инпута"
+            input.input__field(type="text" placeholder="placeholder" value=value)
+            span.input__msg=msg
+    else
+        .input(class='' + modificator)
+            label.input__label=label
+            input.input__field(type=type placeholder=placeholder value=value)
+            span.input__msg=msg

@@ -1,0 +1,19 @@
+header.header(class=headerClassModifer)
+    a.header__logo(href="index.html")
+        svg
+            use(xlink:href='#icn-logo')
+
+    .header__text За 20 лет организовали поломничества в Мекку для 60 000 человек.
+    .header__text Официальный туроператор Совета Муфтиев России
+
+    nav.header__menu
+        a.header__link.header__link--is-active(href="#") Хадж
+        a.header__link(href="#") Умра
+        a.header__link(href=lnAbout) О нас
+        a.header__link(href=lnConacts) Контакты
+
+    button.header__button.header__button--offset
+
+    include components/_mobile-menu
+    include  components/_main-menu
+

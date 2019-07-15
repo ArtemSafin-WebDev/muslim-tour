@@ -1,0 +1,26 @@
+.articles-slider {
+  @extend .container;
+
+  position: relative;
+
+  margin: var(--articles-slider-spacer-t, rem(154)) auto;
+
+  &__title {
+    @extend .title--h2;
+
+    margin-bottom: rem(46);
+  }
+
+  &__swiper {
+    width: 100vw;
+    margin: 0 0 rem(71);
+  }
+
+  @include max-wide(tablet) {
+    --articles-slider-spacer-t: #{rem(110)};
+  }
+
+  @include max-wide(phones) {
+    --articles-slider-spacer-t: #{rem(85)};
+  }
+}

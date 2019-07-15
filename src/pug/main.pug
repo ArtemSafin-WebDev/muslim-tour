@@ -1,0 +1,29 @@
+extends  includes/@layout
+
+prepend head
+    -  pageTitle = 'Главная страница'
+
+block content
+    main.layout
+        section.layout__section.layout__section--offer
+            include includes/components/_home-offer
+
+        section.layout__section.layout__section--ticker
+            include includes/components/_ticker
+
+        section.layout__section.layout__section--about-us
+            .layout__wrapper
+                include includes/components/_about-us
+
+        section.layout__section.layout__section--reviews
+            include includes/components/_reviews-slider
+
+        section.layout__section
+            .layout__wrapper
+                include includes/components/_news-slider
+
+        section.layout__section.layout__section--join-us
+            .layout__wrapper
+                include includes/components/_join-us
+
+        //include includes/components/_chat-button

@@ -1,0 +1,105 @@
+.reviews-card {
+  --reviews-card-image-size: #{rem(68)};
+
+  padding: var(--reviews-card-spacer-t, rem(42)) var(--reviews-card-spacer-r, rem(58)) var(--reviews-card-spacer-b, rem(42)) var(--reviews-card-spacer-l, rem(49));
+
+  background-color: var(--cl-gray-fr);
+
+  will-change: transform;
+
+  user-select: none;
+  cursor: default;
+
+  &__top {
+    display: grid;
+    grid-template-columns: var(--reviews-card-image-size) 1fr auto;
+    grid-gap: rem(16);
+
+    margin-bottom: rem(38);
+  }
+
+  &__avatar {
+    overflow: hidden;
+
+    img {
+      display: block;
+
+      width: var(--reviews-card-image-size);
+      min-width: var(--reviews-card-image-size);
+      height: var(--reviews-card-image-size);
+
+      border-radius: 50%;
+    }
+  }
+
+  &__info, &__soc {
+    padding-top: rem(14);
+  }
+
+  &__soc {
+    display: inherit;
+    grid-gap: rem(14);
+
+    font-size: rem(28);
+
+    .mti-soc-fb-sec {
+      color: #475993;
+    }
+
+    .mti-soc-vk {
+      color: #4c75a3;
+    }
+
+    i {
+      &:hover {
+        color: $color-primary;
+        opacity: .8;
+      }
+    }
+  }
+
+  &__content {
+    @extend .text;
+
+    line-height: 1.59;
+  }
+
+  &__name {
+    @extend .text;
+
+    margin-bottom: rem(7);
+
+    font-weight: bold;
+  }
+
+  &__data {
+    @extend .text--addit;
+
+    color: #6d7278;
+  }
+
+  @include min-wide(laptop) {
+    &:hover {
+      position: relative;
+      z-index: 1;
+
+      filter: drop-shadow($shadow-card);
+      animation: reviewsHover .6s both;
+    }
+  }
+
+  @include max-wide(phones) {
+    --reviews-card-spacer-t: #{rem(32)};
+    --reviews-card-spacer-r: #{rem(32)};
+    --reviews-card-spacer-b: #{rem(32)};
+    --reviews-card-spacer-l: #{rem(32)};
+
+    &__content {
+      line-height: 1.5;
+    }
+
+    &__top {
+      margin-bottom: rem(28);
+    }
+  }
+}

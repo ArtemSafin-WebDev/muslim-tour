@@ -1,0 +1,230 @@
+/*
+`* In this file, all the variables associated with the project are stored.
+//*/
+
+//$assetsDir: '/assets/new';
+//$assetsDir: '';
+
+//* Main on/off for import styles
+$isUsedSelect: select2 !default; //to: bootstrap-select || select2
+$iconsSpriteType: 'base' !default; //to:  grump || base
+
+//* Maps width devices
+$wideScreens: (
+        phonesSm: 340px,
+        phones: 480px,
+        tablet: 760px,
+        laptop: 992px,
+        desktopSm: 1025px,
+        desktop: 1200px,
+        notebook: 1400px,
+        notebookLg: 1600px,
+        hd: 1800px,
+        retina: 2100px,
+        retina4k: 3656px,
+        retina5k: 5100px,
+        retina8k: 7600px
+);
+
+//* Main sizes
+$contentWidth: var(--content-width);
+$contentAsideWidth: rem(336);
+$contentPadding: var(--content-padding);
+$contentGutter: rem(24);
+
+$topOffsetGutter: rem(70) !default;
+$topOffset: rem(40) + $topOffsetGutter !default;
+
+$elemRadius: rem(4);
+
+$letterSpacing: rem(1.3);
+$letterSpacingSec: rem(5);
+
+$cardWidth: rem(270);
+
+$blurContent: blur(rem(27));
+$blurContentSec: blur(rem(17));
+
+//$cardHeight: rem(396);
+
+//* Root
+:root {
+  //* root sizes
+  --content-width: #{rem(1440)};
+  --content-padding: #{rem(24)};
+
+  --animation-blur-dalay: 0.32s;
+  --animation-blur-function: cubic-bezier(.52, .1, .97, .64);
+
+  --full-slider-offset: calc(100vw - #{rem(2)}); // calc( 1px  - (((var(--content-width) / 100vw) * 100)/2));;
+  //--full-slider-offset-top: #{rem(24)};
+  //--full-slider-offset-b: #{rem(24)};
+  //
+  --headers-text-color: var(--cl-white);
+
+  //* root color
+  --cl-green: #59ba26;
+  --cl-green-lg: #97e96c;
+  --cl-green-lg-sc: #c8efb4;
+  --cl-green-dr: #467057;
+
+  --cl-blue: #040278;
+  --cl-blue-lg: #000080;
+
+  --cl-white: #ffffff;
+  --cl-black: #000000;
+
+  --cl-black-72: rgba(0, 0, 0, 0.72);
+  --cl-black-54: rgba(0, 0, 0, 0.54);
+  --cl-black-50: rgba(0, 0, 0, 0.5);
+
+  --cl-gray: #d8d8d8;
+  --cl-gray-sc: #f6f6f6;
+  --cl-gray-th: #f4f4f4;
+  --cl-gray-fr: #fafafa;
+
+  --cl-yellow: #ffda1a;
+  --cl-yellow-lg: #f9dc03;
+
+  --cl-red: #d8232a;
+}
+
+//* Color palette
+$color-primary: var(--cl-green);
+$color-secondary: var(--cl-blue);
+
+$color-light: var(--cl-white);
+$color-dark: var(--cl-black);
+
+$color-text: var(--cl-black);
+$color-text-sc: var(--cl-black-50);
+$color-text-error: var(--cl-red);
+
+// * backgrounds
+$background-main-color: $color-light;
+$background-gray: var(--cl-gray);
+$background-gray-light: var(--cl-gray-sc);
+$background-fade: rgba(0, 0, 0, 0.24);
+
+// * gradients
+$trip-grad-brown: linear-gradient(to right, rgba(1, 0, 51, 0.68), 1, rgba(0, 61, 145, 0.73));
+//$trip-grad-brown: linear-gradient(to right, rgba(81, 43, 0, 0.72), #000444);
+$trip-grad-blue: linear-gradient(to right, rgba(1, 0, 51, 0.68), rgba(0, 61, 145, 0.73));
+$trip-grad-green: linear-gradient(to left, #000955, 2.1%, rgba(33, 164, 14, 0.24));
+
+$black-img-grad: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.74) 100%);
+
+$black-img-hr-grad: linear-gradient(to bottom, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0) 68%, rgba(0, 0, 0, 0.44));
+
+$dark-blue-grad: linear-gradient(116deg, rgba(1, 0, 44, 0.62), rgba(62, 45, 0, 0.12));
+
+// * border
+$border: rem(1) solid var(--cl-gray);
+$border-black: rem(1) solid var(--cl-black);
+$border-green: rem(1) solid var(--cl-green);
+$border-red: rem(1) solid var(--cl-red);
+$border-link-dashed: rem(1) dashed $color-dark;
+//$border-link-dashed-is-bg: linear-gradient(to right, #fff 40%, rgba(255, 255, 255, 0) 20%) repeat-x bottom / rem(3) rem(1);
+
+// * shadow
+$shadow-card: 0 rem(4) rem(8) rgba(0, 0, 0, 0.12);
+$shadow-card-inset: inset 0 0 rem(10) rem(2) var(--cl-green);
+$shadow-tooltip: 0 0 rem(40) 0 rgba(0, 0, 0, 0.27);
+$shadow-fancy-preview: 0 rem(5) rem(4) 0 rgba(0, 0, 0, 0.37);
+
+//$shadow: 0 0 rem(25) rgba(0, 0, 0, 0.12);
+//$shadow-down: 0 rem(4) rem(8) rgba(0, 0, 0, 0.04);
+//$shadow-border: inset 0 0 0 rem(1) var(--cl-gray);
+//$shadow-dropdown: 0 0 rem(25) rgba(0, 0, 0, 0.12);
+
+//* Images
+//$logo: url('../img/logo.png');
+$home-bg-blur: url('../img/first-bg-blur.jpg');
+$home-bg-blur-mob: url('../img/first-bg-blur-mob.jpg');
+$home-bg: url('../img/first-bg.jpg');
+$blue-bg: url('../img/blue-bg.jpg');
+$blue-bg-grad: url('../img/blue-bg-grad.png');
+$pattern-bg: url('../img/pattern.png');
+$weber-logo: url('../img/wber-logo.png');
+
+$to-bg-schedule: url('../img/top-bg-sh.jpg');
+$to-bg-detail: url('../img/top-bg-dt.jpg');
+$to-bg-pilgrim: url('../img/top-bg-pl.jpg');
+$to-bg-gallery: url('../img/top-bg-fotog.jpg');
+$to-bg-gallery2: url('../img/top-bg-fotog2.jpg');
+
+$our-task-bg: url('../img/task-bg.jpg');
+
+//$df-nota-vatar: url('../img/default-user-avatar.png');
+
+// * fonts
+$font-path: "../fonts" !default;
+
+$font-mp: 'Meta Pro' !default;
+$font-mp-path: $font-path + "/metapro/" !default;
+$font-icomoon-path: $font-path + "/icomoon/" !default;
+
+//$font-family: Arial;
+$font-family-primary: 'Open Sans', sans-serif;
+$font-family-secondary: $font-mp, sans-serif;
+$font-family-tertiary: 'PT Sans', sans-serif;
+
+//* Icons
+$icon-font-family: "muslim-icons" !default;
+$icon-font-path: "../fonts/icons" !default;
+
+$mti-hotel: "\e936";
+$mti-video-play: "\e935";
+$mti-arrow-prev: "\e933";
+$mti-arrow-next: "\e934";
+$mti-syringe: "\e931";
+$mti-moon-star: "\e932";
+$mti-air-line: "\e930";
+$mti-menu: "\e92f";
+$mti-soc-fb-sec: "\e92e";
+$mti-symbol: "\e92d";
+$mti-chat: "\e92b";
+$mti-check: "\e900";
+$mti-air: "\e901";
+$mti-people-gp: "\e902";
+$mti-bus: "\e903";
+$mti-geo: "\e904";
+$mti-food: "\e905";
+$mti-go: "\e906";
+$mti-arrow-left: "\e907";
+$mti-arrow-right: "\e908";
+$mti-caret-up: "\e909";
+$mti-caret-down: "\e90a";
+$mti-caret-right: "\e90b";
+$mti-caret-slip: "\e90c";
+$mti-close: "\e90d";
+$mti-devider-round: "\e90e";
+$mti-devider: "\e90f";
+$mti-devider-large: "\e92a";
+$mti-mail: "\e910";
+$mti-men: "\e911";
+$mti-woman: "\e912";
+$mti-play: "\e913";
+$mti-quote: "\e914";
+$mti-quote-sec: "\e92c";
+$mti-document: "\e915";
+$mti-people: "\e916";
+$mti-tied-hands: "\e917";
+$mti-acropolis: "\e918";
+$mti-mosque: "\e919";
+$mti-bottle: "\e91a";
+$mti-card: "\e91b";
+$mti-services: "\e91c";
+$mti-shield: "\e91d";
+$mti-coun-bl-gb: "\e91e";
+$mti-coun-ru-gb: "\e91f";
+$mti-coun-bl: "\e920";
+$mti-coun-ru: "\e921";
+$mti-phone: "\e922";
+$mti-soc-fb: "\e923";
+$mti-soc-in: "\e924";
+$mti-soc-vk: "\e925";
+$mti-soc-wh: "\e926";
+$mti-soc-you: "\e927";
+$mti-star: "\e928";
+$mti-star-line: "\e929";

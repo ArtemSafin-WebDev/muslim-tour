@@ -1,0 +1,27 @@
+.news {
+  $news-item-offset: rem(12);
+
+  --news-item-min-size: #{rem(250)};
+
+  display: flex;
+  flex-flow: column;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(var(--news-item-col, 3), minmax(var(--news-item-min-size), 1fr));
+    grid-gap: $news-item-offset*2;
+  }
+
+  &__nav {
+    margin-top: rem(32);
+    padding: $news-item-offset 0;
+  }
+
+  @include max-wide(tablet) {
+    --news-item-col: 2;
+  }
+
+  @include max-wide(phones) {
+    --news-item-col: 1;
+  }
+}

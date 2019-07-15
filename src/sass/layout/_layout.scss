@@ -1,0 +1,121 @@
+.layout {
+  position: relative;
+
+  flex: 1 1;
+
+  margin: (- $topOffset) 0 0;
+  padding: $topOffset 0 0;
+
+  transition: filter var(--animation-blur-dalay) var(--animation-blur-function);
+  //transition: filter 0.6s cubic-bezier(.08, .54, .84, .48); //cubic-bezier(.71,.06,.53,.66)
+
+  &__section {
+    &:nth-child(2), &.second {
+      margin-top: var(--layout-section-top-gutter, 0);
+    }
+
+    &:not(&--ticker) {
+      --layout-section-top-gutter: #{rem(60)};
+    }
+
+    &--offer {
+      width: 100%;
+      height: 100vh;
+      min-height: rem(678);
+
+      margin-top: -$topOffset;
+
+      @media (max-height: 380px) {
+        //height: max-content;
+        min-height: 375px;
+        
+      }
+    }
+
+    &--join-us {
+      margin: rem(146) 0 rem(-91);
+
+      @include max-wide(tablet) {
+        margin: rem(100) 0 0;
+      }
+
+      @include max-wide(phones) {
+        margin-top: rem(66);
+      }
+    }
+
+    &--about-us {
+      margin: rem(194) 0 0;
+
+      @include max-wide(tablet) {
+        margin-top: rem(142.8);
+      }
+    }
+
+    &--reviews {
+      margin: rem(241) 0 rem(287);
+
+      @include max-wide(phones) {
+        margin: rem(38) 0 rem(127);
+      }
+    }
+
+    &--travel {
+      margin-top: 0 !important;
+
+      padding-top: var(--layout-section-top-gutter, 0);
+    }
+
+    &--blur-sub, &--offer {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        content: '';
+
+        background-color: $color-dark;
+        //opacity: var(--layout-substrate-opacity, 0);
+        transform: scale(var(--layout-substrate-scale, 1));
+        transition: all 1s, scale 0s;
+      }
+    }
+
+    &--news {
+      --layout-content-gap: #{rem(24)};
+    }
+  }
+
+  &__wrapper {
+    max-width: $contentWidth;
+
+    margin: 0 auto;
+    padding: 0 $contentPadding;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: var(--layout-template-columns, minmax(100px, max-content) max-content);
+    grid-column-gap: var(--layout-content-gap, 10%); //rem(144)
+
+    //@include min-wide(laptop) {
+    //  //--layout-content-column-1:
+    //}
+
+    @include max-wide(laptop) {
+      --layout-template-columns: 100%;
+      --layout-content-gap: #{$contentGutter};
+    }
+  }
+
+  &--blur {
+    filter: blur(rem(27));
+  }
+}
+

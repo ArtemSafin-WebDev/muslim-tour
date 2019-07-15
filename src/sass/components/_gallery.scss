@@ -1,0 +1,49 @@
+.gallery {
+  &__section {
+    &:not(:last-child) {
+      margin-bottom: rem(31);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(21);
+  }
+  &__item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__caption {
+    font-size: rem(18);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__description {
+    font-size: rem(14);
+    line-height: 1.93;
+    color: #7a7a7a;
+  }
+
+  @include max-wide(desktopSm) {
+    &__item {
+      flex: 1 1;
+      .gallery-card {
+        --gallery-card-size: max-content;
+        width: 100% !important;
+      }
+    }
+  }
+
+  //@include max-wide(tablet) {
+  //  &__item {
+  //    .gallery.album-card {
+  //      //--gallery.album-card-size: auto!important;
+  //      width: 100% !important;
+  //    }
+  //  }
+  //}
+}

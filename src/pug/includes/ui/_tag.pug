@@ -1,0 +1,19 @@
+mixin ui-tag(modificator,label,onOff,id,group,icon)
+    if ((label || modificator) == null)
+        .tag
+            input.tag__input(type="checkbox")
+            label.tag__label  Тег/Метка
+    else if (modificator === 'disabled')
+        .tag
+            input.tag__input(type="checkbox" disabled)
+            label.tag__label  Тег при отключенном состоянии
+
+    else if (modificator === 'checked')
+        .tag
+            input.tag__input(type="checkbox" checked)
+            label.tag__label  Тег при активном состоянии
+    else
+        .tag(class=modificator)
+            input.tag__input(type="checkbox", checked=onOff, id=id, name=group)
+            label.tag__label(data-icon=icon)=label
+                block

@@ -1,0 +1,18 @@
+extends  includes/@layout
+
+prepend head
+    -  pageTitle = 'Отзывы'
+
+prepend header
+    -  headerClassModifer = 'header--is-dark'
+
+block content
+    main.layout
+        section.layout__section
+            .layout__wrapper
+            + page-header('Умра 2019','',subMenuList,6)
+        section.layout__section
+            .layout__wrapper
+                include includes/components/_reviews
+
+block footer

@@ -1,0 +1,16 @@
+.our-managers
+    .our-managers__title  Наши менджеры
+
+    .our-managers__list
+        each i in [1,2,3,4]
+            .our-managers__item
+                i.our-managers__icon.mti-woman
+                .our-managers__capt Гизатуллина Лилия
+                + contact-link('phone','tel:+8 999 555-55-55','8 999 555-55-55','Телефон','contact-link--small')
+                + contact-link('soc-wh','tel:+8 999 555-55-55','8 999 555-55-55','Whatsapp','contact-link--small')
+
+            .our-managers__item
+                i.our-managers__icon.mti-men
+                .our-managers__capt Гизатуллина Лилия
+                + contact-link('phone','tel:+8 999 555-55-55','8 999 555-55-55','Телефон','contact-link--small')
+                + contact-link('soc-wh','tel:+8 999 555-55-55','8 999 555-55-55','Whatsapp','contact-link--small')

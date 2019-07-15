@@ -1,0 +1,13 @@
+mixin gallery-card(classModifer,galleryCardImage,galleryCardName,galleryCardCount, galleryDataFancy)
+    if (galleryCardImage === null || galleryCardName === null || galleryCardCount === null)
+        - var galleryCardImage ="/img/gall-1.jpg" , galleryCardName= "Фотографий в альбоме", galleryCardCount= "56"
+
+    if (galleryDataFancy === 'gallery')
+        -
+            lnGalleryDetail = '/img/gallary-slide-image.jpg';
+            galleryDataCaption ='Какая-то важная мысль. Это также поможет вам быть самостоятельным и не ждать подсказок других. Ваши мольбы будут осознанными и исходить из глубины души. Вы также сможете помочь своим друзьям советом и знаниями.';
+
+    a.gallery-card(class=classModifer href=lnGalleryDetail, data-fancybox=galleryDataFancy data-caption=galleryDataCaption )
+        img(src=galleryCardImage)
+        mark(data-count-gllaru-image=galleryCardCount)=galleryCardName
+        //span=galleryCardName

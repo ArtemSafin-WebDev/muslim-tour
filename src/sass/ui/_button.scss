@@ -1,0 +1,153 @@
+$btn-size: rem(62);
+$btn-size-fn: rem(12);
+
+$btn-color: $color-primary;
+$btn-disabled-color: var(--cl-gray);
+$btn-hover-color: #53ad23;
+
+.button {
+  --button-size: #{$btn-size};
+  --button-size-fn: #{$btn-size-fn};
+  --button-width: max-content;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--button-width);
+  height: var(--button-size);
+
+  padding: 0 rem(22);
+
+  font-family: $font-family-primary;
+  font-size: var(--button-size-fn);
+  line-height: var(--button-size);
+
+  letter-spacing: rem(1.9);
+  text-transform: uppercase;
+  color: $color-light;
+
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $btn-color;
+
+  user-select: none;
+
+  transition: all 0.4s ease-in-out;
+  will-change: transition;
+
+  cursor: pointer;
+
+  &:disabled, &[disabled] {
+    pointer-events: none;
+
+    background-color: $btn-disabled-color;
+  }
+
+  &--full {
+    width: 100% !important;
+  }
+
+  &--caret {
+    justify-content: space-between;
+
+    &:after {
+      margin-left: rem(30);
+
+      @include pseudo-icon($mti-caret-right, 8);
+    }
+  }
+
+  &--chat {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: rem(72);
+    height: rem(72);
+
+    color: $color-light;
+
+    background-color: var(--cl-blue);
+    transition: all 0.2s linear;
+
+    &:before {
+      @include pseudo-icon($mti-chat, 35);
+    }
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+
+  &--next, &--prev, &--next-sm, &--prev-sm {
+    --button-arrow-animation: scaleX(var(--button-arrow-scale, 1.22)) translateX(var(--button-arrow-shift, 8%));
+
+    display: inline-flex;
+    align-items: center;
+
+    color: $color-primary;
+
+    &:before {
+      @include pseudo-icon($mti-arrow-right, var(--buuton-arrow-size, rem(47)));;
+    }
+
+    @include max-wide(phones) {
+      --buuton-arrow-size: #{rem(38)};
+    }
+  }
+
+  &--next-sm, &--prev-sm {
+    &:before {
+      font-size: rem(27) !important;
+    }
+  }
+
+  &--prev, &--prev-sm {
+    --button-arrow-shift: -8% !important;
+
+    &:before {
+      content: $mti-arrow-left;
+    }
+  }
+
+  &--w212 {
+    --button-width: #{rem(212)};
+
+    @include max-wide(phones) {
+      --button-width: max-content; //#{rem(184.8)}
+    }
+  }
+
+  &--w277 {
+    --button-width: #{rem(277)};
+  }
+
+  &--close {
+    &:after {
+      @include pseudo-icon($mti-close, 13);;
+    }
+  }
+
+  @include min-wide(laptop) {
+    &:hover {
+      background-color: $btn-hover-color;
+    }
+
+    &:active {
+      transform: translateY(rem(2));
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &--next, &--prev, &--next-sm, &--prev-sm {
+      &:hover {
+        transform: var(--button-arrow-animation);
+      }
+
+      &:active {
+        color: var(--cl-green-lg-sc);
+      }
+    }
+  }
+}

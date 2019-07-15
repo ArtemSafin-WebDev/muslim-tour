@@ -1,0 +1,212 @@
+.tour-route {
+  $tour-route-step-width: rem(37);
+
+  &, &__item {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__main {
+    display: grid;
+    grid-gap: var(--tour-route-gap, rem(55));
+
+    flex: 1 1;
+  }
+
+  &__total {
+    flex: 0 1 rem(260);
+
+    margin-left: auto;
+    padding: 0 $contentGutter;
+
+    border-left: rem(1) solid #cfcfcf;
+
+    &-head {
+      @extend .text--addit;
+
+      margin-bottom: rem(14);
+
+      color: #6d7278;
+    }
+
+    &-main {
+      line-height: 1.35;
+    }
+  }
+
+  &__type, &__date {
+    flex: 0 1 var(--tour-route-capt-size, rem(140));
+
+    white-space: nowrap;
+  }
+
+  &__type {
+    color: #6d7278;
+    font-weight: normal;
+  }
+
+  &__date {
+    font-weight: bold;
+    color: var(--tour-route-item-color, $color-primary)
+  }
+
+  &__steps {
+    display: flex;
+    align-items: center;
+
+    margin-left: rem(25);
+  }
+
+  &__step {
+    display: inline-flex;
+    flex-direction: column;
+
+    width: max-content;
+
+    cursor: default;
+
+    &-capt {
+      font-weight: bold;
+      margin-bottom: rem(16);
+    }
+
+    &-way {
+      display: inline-flex;
+      align-items: center;
+
+      margin-left: -$tour-route-step-width;
+
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      &:before, &:after {
+        position: relative;
+
+        display: block;
+
+        width: calc(50% - 24px);
+        height: rem(1);
+
+        order: 1;
+
+        content: '';
+
+        background-color: #cfcfcf;
+      }
+
+      &:before {
+        order: 3;
+      }
+
+      figure {
+        order: 2;
+        width: rem(17);
+        height: rem(17);
+
+        border: rem(1) solid var(--cl-black);
+        border-radius: 50%;
+      }
+
+      [class*='mti-'], [class*='icon-'] {
+        order: 0;
+
+        margin: 0 rem(7.5);
+
+        color: #b0b0b0;
+
+        cursor: pointer;
+        transition: color .2s ease-in-out;
+
+        &:hover {
+          color: $color-primary
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      padding-left: $tour-route-step-width;
+    }
+
+    &:first-child {
+      .tour-route__step-way {
+        margin-left: 0;
+        &:before {
+          width: calc(100% - 17px);
+        }
+        &:after {
+          display: none;
+        }
+        [class*=mti-], [class*=icon-] {
+          display: none;
+        }
+      }
+    }
+
+    &:last-child {
+      .tour-route__step-way {
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  @include max-wide(laptop) {
+    --tour-route-capt-size: #{rem(150)};
+
+    &__type, &__date {
+      min-width: var(--tour-route-capt-size);
+    }
+
+    &__item {
+      position: relative;
+      flex-flow: row wrap;
+    }
+
+    &__steps {
+      width: calc(100vw - var(--content-padding));
+
+      margin: rem(26) 0 0;
+      padding-bottom: rem(20);
+
+      overflow-x: auto;
+      scroll-behavior: smooth !important;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  @include max-wide(tablet) {
+    --tour-route-gap: #{rem(30)};
+    --tour-route-capt-size: #{rem(100)};
+
+    &__step {
+      &:last-child {
+        padding-right: var(--content-padding);
+      }
+    }
+  }
+
+  @include max-wide(phones) {
+    &__item {
+      &:before {
+        position: absolute;
+        top: 0;
+        right: 105%;
+        left: -10vw;
+        bottom: 0;
+
+        content: '';
+
+        background-color: var(--tour-route-item-color, $color-primary);
+      }
+
+      &:last-child {
+        --tour-route-item-color: var(--cl-yellow);
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.our-goal {
+  margin-bottom: var(--our-goal-spacer, rem(150));
+
+  background-color: var(--cl-gray-fr);
+
+  &__content {
+    @extend .container;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: var(--our-goal-height, rem(775));
+  }
+
+  &__title {
+    @extend .text--birk;
+
+    margin-bottom: rem(17);
+
+    line-height: 2.15;
+    letter-spacing: rem(2);
+  }
+
+  &__message {
+    max-width: var(--our-goal-width, rem(1176));
+
+    font-size: var(--our-goal-fn, rem(40));
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.73;
+    letter-spacing: rem(3.9);
+  }
+
+  @include max-wide(laptop) {
+    //--our-goal-width: #{rem()};
+    --our-goal-height: #{rem(600)};
+    --our-goal-spacer: #{rem(120)};
+  }
+
+  @include max-wide(tablet) {
+    --our-goal-spacer: #{rem(90)};
+    --our-goal-height: #{rem(400)};
+  }
+
+  @include max-wide(phones) {
+    --our-goal-fn: #{rem(32)};
+  }
+}

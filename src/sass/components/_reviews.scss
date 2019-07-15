@@ -1,0 +1,38 @@
+.reviews {
+  --reviews-columns: 3;
+  --reviews-grap: #{rem(24)};
+
+  &__list {
+    column-count: var(--reviews-columns);
+    column-width: auto;
+    column-fill: initial;
+    column-gap: var(--reviews-grap);
+  }
+
+  &__item {
+    position: relative;
+
+    display: inline-flex;
+    vertical-align: top;
+
+    width: 100%;
+
+    margin-bottom: rem(24);
+
+    break-inside: avoid-column;
+  }
+
+  &__more {
+    margin: rem(56) auto;
+
+    text-align: center;
+  }
+
+  @include max-wide(desktopSm) {
+    --reviews-columns: 2;
+  }
+
+  @include max-wide(phones) {
+    --reviews-columns: 1;
+  }
+}

@@ -1,0 +1,23 @@
+.news-slider
+    .news-slider__title Новости
+
+    .news-slider__swiper.swiper--news
+        .swiper-nav
+            button(type="button").swiper-button-prev.button--prev
+            button(type="button").swiper-button-next.button--next
+
+        .swiper-container
+            .swiper-wrapper
+                each item in sliderNewsList
+                    -
+                        var newsCardModifer='news-card--is-shift',
+                        newsCardImg = item.img,
+                        newsCardData   = item.data,
+                        newsCardTitle= item.title,
+                        newsCardText  = item.text;
+
+                    .swiper-slide
+                        include _news-card
+
+    .news-slider__bottom
+        a.button.button--caret.button--w212(href=lnNews) Все новости

@@ -1,0 +1,24 @@
+.crumbs {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: rem(11);
+
+  &__item {
+    @extend .text--addit;
+
+    &:not(:last-child) {
+      opacity: 0.8;
+
+      &:after {
+        content: '/';
+
+        margin: 0 rem(4);
+      }
+    }
+
+    &:hover {
+      color: var(--cl-green-lg);
+    }
+  }
+}

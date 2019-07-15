@@ -1,0 +1,10 @@
+.gallery-detail
+    h2.gallery-detail__title Поломники из Казани посещают исторические места
+
+    secton.gallery-detail__list
+        each i in randomArr5
+            each item in galleryCardsList
+                + gallery-card('gallery-card--full gallery-card--not-counter',item.img,'','','gallery')
+
+    nav.gallery-detail__nav
+        include _pagination

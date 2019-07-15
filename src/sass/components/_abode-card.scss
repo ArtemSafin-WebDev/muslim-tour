@@ -1,0 +1,133 @@
+.abode-card {
+  --abode-card-image-size: #{rem(260)};
+  --abode-card-offset: #{rem(35)};
+  --abode-card-spacer-r: calc(var(--abode-card-image-size) + var(--abode-card-offset));
+  --abode-card-top-offset: calc(-0px - var(--abode-card-spacer-r));
+
+  position: relative;
+
+  height: max-content;
+
+  padding: rem(30) var(--abode-card-spacer-r) rem(30) rem(30);
+
+  background-color: var(--cl-gray-fr);
+
+  cursor: default;
+
+  &__top {
+    @extend .text--addit ;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 var(--abode-card-top-offset) 0 0;
+
+    z-index: 1;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: var(--abode-card-image-size);
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center right;
+  }
+
+  &__link {
+    position: relative;
+    margin-right: rem(30);
+
+    font-weight: 600;
+    color: $color-light;
+
+    border-bottom: rem(1) dashed rgba(#fff, 0.4);
+
+    &-count {
+      position: absolute;
+      top: 50%;
+      right: 0;
+
+      transform: translate(rem(21), -50%);
+      opacity: 0.4;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__place {
+    @extend .text--birk;
+
+    color: inherit;
+    letter-spacing: rem(2);
+    white-space: nowrap;
+  }
+
+  &__name {
+    @extend .title--h2 ;
+    display: inline-flex;
+
+    margin-bottom: rem(19);
+
+    font-weight: 600;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__info {
+    margin-bottom: 23%;
+
+    line-height: 1.47;
+  }
+
+  &__bootom {
+    @extend .text--addit ;
+
+    list-style: none;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 5.4%;
+      }
+    }
+
+    [class*='mti-'], [class*='icon-'] {
+      min-width: rem(22);
+
+      margin-right: rem(11);
+
+      font-size: rem(22);
+      text-align: center;
+      color: $color-primary;
+    }
+  }
+
+  @include max-wide(phones) {
+    --abode-card-image-size: #{rem(140)};
+  }
+
+  @include min-wide(phones) {
+    --abode-card-image-size: #{rem(286)};
+  }
+
+  @include min-wide(tablet) {
+    --abode-card-image-size: #{rem(0)};
+    min-width: rem(480);
+  }
+
+  @include min-wide(laptop) {
+    --abode-card-image-size: #{rem(260)};
+  }
+}

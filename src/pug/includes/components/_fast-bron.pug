@@ -1,0 +1,31 @@
+mixin fast-bron(classModifer)
+    .fast-bron(class=classModifer)
+        if (classModifer !== 'fast-bron--in-header')
+            .fast-bron__part
+                .fast-bron__title Умра 2019. Тариф «Все включёно»
+                .fast-bron__text Самая дешёвая программа в России для тех, кто хочет совершить Умру с премиальными условиями в середине апреля, но в то же время не переплачивая за тур — идеальное соотношение цены и качества.
+        if (classModifer === 'fast-bron--in-header')
+            .fast-bron__part.fast-bron__part--flay
+                .fast-bron__capt 11 — 21 февраля
+                .fast-bron__capt Откуда вылет
+
+                .fast-bron__tags
+                    + ui-tag('tag--large','Из Казани', true)
+                        span 1 500 $
+                    + ui-tag('tag--large','Из Москвы')
+                        span 1 300 $
+                    + ui-tag('tag--large','Из С-Петербурга')
+                        span 1 500 $
+
+        .fast-bron__part
+            p.fast-bron__text-top Цена на одного человек
+                del 1700 $
+
+            span.fast-bron__price
+                strong 1 500 $
+                span ≈ 124 695 ₽
+
+            p.fast-bron__text-op Цена при 4-х местном размещении указана в рублях по курсу ЦБ РФ на 1.03.19 + 2%
+
+            .fast-bron__part-bottom
+                button#stickyBtnBron.button.button--caret.button--w277 Забронировать

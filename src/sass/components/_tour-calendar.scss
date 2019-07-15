@@ -1,0 +1,150 @@
+.tour-calendar {
+  display: flex;
+  align-items: flex-start;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    flex: auto;
+
+    min-width: var(--tour-calendar-list-width, rem(200));
+
+    list-style: none;
+
+    padding: var(--tour-calendar-list-spacer-t, rem(42)) var(--tour-calendar-list-spacer-r, rem(52)) var(--tour-calendar-list-spacer-b, rem(42)) var(--tour-calendar-list-spacer-l, 0);
+
+    &:last-child {
+      padding-right: var(--tour-calendar-list-spacer-last-r, rem(26));
+      padding-left: var(--tour-calendar-list-spacer-last-l, rem(52));
+    }
+
+    &--spec {
+      flex: 1 1 var(--tour-calendar-list-width-s, rem(377));
+
+      background-color: #F0FAEB;
+    }
+
+    &--disabled {
+      color: rgba(#000000, 0.30);
+      pointer-events: none;
+    }
+  }
+
+  &__item {
+    flex-flow: row wrap;
+
+    &, &--capt {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(18);
+    }
+
+    &--capt {
+      margin-bottom: rem(42);
+
+      font-size: rem(24);
+      font-weight: bold;
+      white-space: nowrap;
+
+      span {
+        margin-right: rem(13);
+      }
+    }
+  }
+
+  &__link {
+    @extend .text;
+
+    width: max-content;
+
+    margin: 0 rem(13) rem(9) 0;
+
+    border-bottom: $border;
+
+    &:hover {
+      color: $color-primary
+    }
+
+    &--is-active {
+      font-weight: bold;
+      border-bottom: none;
+    }
+  }
+
+  &__sticker {
+    display: inline-flex;
+    align-items: center;
+
+    height: rem(24);
+
+    padding: 0 rem(7);
+
+    font-size: rem(12);
+    font-weight: bold;
+    letter-spacing: rem(1.7);
+    line-height: 1;
+    color: $color-light;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    background-color: $color-primary;
+
+    &--red {
+      background-color: var(--cl-red);
+    }
+  }
+
+  @include max-wide(laptop) {
+    --tour-calendar-list-width: #{rem(130)};
+    //--tour-calendar-list-width-s: #{rem(160)};
+
+    --tour-calendar-list-spacer-t: #{rem(30)};
+    --tour-calendar-list-spacer-r: #{rem(30)};
+    --tour-calendar-list-spacer-b: #{rem(30)};
+    //--tour-calendar-list-spacer-l: #{rem()};
+
+    --tour-calendar-list-spacer-last-r: #{rem(30)};
+    --tour-calendar-list-spacer-last-l: #{rem(30)};
+
+    flex-flow: row wrap;
+
+    max-width: rem(650);
+  }
+
+  @include max-wide(tablet) {
+    --tour-calendar-list-width-s: 50%;
+    --tour-calendar-list-width: #{rem(160)};
+
+    max-width: rem(550);
+  }
+
+  @include max-wide(phones) {
+    //flex-direction: column;
+    max-width: rem(340);
+
+    --tour-calendar-list-width-s: inherit;
+    --tour-calendar-list-width: calc(50%);
+
+    --tour-calendar-list-spacer-t: #{rem(20)};
+    --tour-calendar-list-spacer-r: #{rem(20)};
+    --tour-calendar-list-spacer-b: #{rem(20)};
+
+    &__list {
+      &:nth-child(even) {
+        padding-right: 0;
+      }
+
+      &:not(&--spec) {
+        flex: 0;
+      }
+
+      &--spec {
+        margin-top: rem(20);
+      }
+    }
+  }
+}

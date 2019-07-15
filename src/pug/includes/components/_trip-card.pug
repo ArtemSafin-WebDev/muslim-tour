@@ -1,0 +1,80 @@
+mixin trip-card(styleCard)
+    -
+        var tripCardImage = "img/trip-1.jpg"
+        var tripCardDescShow = false
+        var tripCardInfoShow = true
+    if (styleCard == 0)
+        - tripCardClass ="trip-card--middle trip-card--item-wrap"
+    else if (styleCard == 1)
+        - tripCardClass ="trip-card--blue trip-card--info-round", tripCardImage =  "img/trip-2.jpg", tripCardDescShow= true
+    else if (styleCard == 2)
+        - tripCardClass ="trip-card--blue trip-card--h542 trip-card--item-wrap", tripCardImage =  "img/trip-2.jpg"
+    else if (styleCard == 3)
+        - tripCardClass ="trip-card--green trip-card--h542 trip-card--item-wrap trip-card--info-round", tripCardDescShow= true
+    else if (styleCard == 3.1)
+        - tripCardClass ="trip-card--h542 trip-card--item-wrap"
+    else if (styleCard == 4)
+        - tripCardClass="trip-card--large", tripCardDescShow= true
+    else if (styleCard == 5)
+        - tripCardClass ="trip-card--blue trip-card--info-round trip-card--small", tripCardImage =  "img/trip-3.jpg"
+    else if (styleCard == 6)
+        - tripCardClass ="trip-card--small", tripCardImage = "img/trip-3.jpg", tripCardInfoShow= false
+    else if (styleCard == 7)
+        - tripCardClass ="trip-card--green trip-card--small", tripCardImage =  "img/trip-3.jpg", tripCardInfoShow= false
+    else if (styleCard == 8)
+        - tripCardClass ="trip-card--blue trip-card--small", tripCardImage =  "img/trip-3.jpg", tripCardInfoShow= false
+
+    .trip-card(class=tripCardClass)
+        .trip-card__bg
+            img.trip-card__image(src=tripCardImage)
+
+        header.trip-card__top
+            span.trip-card__title Все включено
+            span.trip-card__time 11—21 февраля
+
+        section.trip-card__main
+            .trip-card__item
+                .trip-card__rating
+                    + rating-stars(3,'rating-stars--only-read')
+
+                .trip-card__capt 4 ночи в Медине
+                .trip-card__flay Вылет из Москвы
+
+            .trip-card__item.trip-card__item--plus +
+
+            .trip-card__item
+                .trip-card__rating
+                    + rating-stars(4,'rating-stars--only-read')
+
+                .trip-card__capt 5 ночей в Мекке
+
+            if (tripCardDescShow == true)
+                .trip-card__item
+                    .trip-card__desc.
+                        Самая дешёвая программа в России для тех, кто хочет совершить Умру с премиальными условиями в середине апреля, но в то же время не переплачивая за тур — идеальное соотношение цены и качества.
+
+        footer.trip-card__bottom
+            if (tripCardInfoShow == true)
+                .trip-card__info
+                    .trip-card__info-item
+                        i.mti-go
+                        span 9 мин до
+                            br
+                            | мечети
+
+                    .trip-card__info-item
+                        i.mti-food
+                        span 2-х разовое
+                            br
+                            | питание
+
+                    .trip-card__info-item
+                        i.mti-people-gp
+                        span 4-х местный
+                            br
+                            | номер
+
+            .trip-card__price
+                button.trip-card__price-tooltip(data-toggle="tooltip" data-html="true"
+                title="<div class='tooltip-head'>USD <b>56.08</b></div><p>Расчет по курсу ЦБ РФ + 2%</p>")  124 695 ₽
+                mark от 1 200 $

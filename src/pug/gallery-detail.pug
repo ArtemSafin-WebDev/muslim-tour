@@ -1,0 +1,17 @@
+extends  includes/@layout
+
+prepend head
+    -  pageTitle = 'Фотографии из Мекки'
+        
+block content
+    main.layout
+        section.layout__section
+            + page-header('Фотографии из Мекки','page-header--gallery-detail',subSecondMenuList,3)
+
+        section.layout__section
+            .layout__wrapper
+                include includes/components/_gallery-detail
+
+        section.layout__section.layout__section--join-us
+            .layout__wrapper
+                include includes/components/_join-us

@@ -1,0 +1,20 @@
+.side-slider
+    .swiper--side
+        .swiper-container
+            .swiper-wrapper
+                each item in randomArr5
+                    .swiper-slide
+                        .swiper-slide__left.swiper-no-swiping
+                            h2.title--h2(data-swiper-parallax="-300") Заголовок второго уровня
+
+                            p.text--sec(data-swiper-parallax="-300") Какая-то важная мысль. Это также поможет вам быть самостоятельным и не ждать подсказок других.
+
+                        .swiper-slide__right
+                            img(src="/img/trip-2.jpg")
+
+            .swiper-bottom
+                .swiper-pagination
+
+                .swiper-nav
+                    button(type="button").swiper-button-prev.button--prev-sm
+                    button(type="button").swiper-button-next.button--next-sm

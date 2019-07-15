@@ -1,0 +1,195 @@
+.fast-bron {
+  --fast-bron-fixed-offset: #{rem(112)};
+
+  display: flex;
+  justify-content: space-between;
+
+  color: $color-light;
+
+  &__part {
+    display: inherit;
+    flex-flow: column;
+
+    max-width: rem(350);
+
+    &-bottom {
+      position: relative;
+
+      width: 100%;
+      min-height: rem(62);
+
+      text-align: right;
+
+      margin: 0 0 0 auto;
+
+      button {
+        &.is-sticky {
+          position: fixed !important;
+          //top: calc(100vh - var(--fast-bron-fixed-offset));
+
+          z-index: 1000;
+        }
+      }
+    }
+
+    &--flay {
+      display: none;
+
+      .fast-bron__capt:first-child {
+        margin-bottom: rem(89);
+      }
+    }
+  }
+
+  &__title {
+    max-width: rem(496);
+
+    margin-bottom: rem(36);
+
+    font-size: rem(40);
+    font-weight: bold;
+    line-height: 1.15;
+  }
+
+  &__capt {
+    @extend .text--capt;
+    font-weight: bold;
+  }
+
+  &__text {
+    max-width: rem(630);
+    line-height: 1.65;
+
+    &-top {
+      @extend .text--addit;
+
+      margin-bottom: rem(10.5);
+    }
+
+    &-op {
+      @extend .text--addit;
+
+      margin-bottom: rem(31);
+
+      opacity: 0.7;
+    }
+  }
+
+  &__tags {
+    margin: rem(16) 0 rem(63);
+
+    > * {
+      margin: 0 rem(17) rem(10) 0;
+    }
+  }
+
+  &.bron {
+    .fast-bron {
+      &__price {
+        > span {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+  &__price {
+    display: inline-block;
+    margin-top: rem(8);
+    margin-bottom: rem(36);
+
+    > * {
+      display: block;
+    }
+
+    strong {
+      font-size: rem(40);
+      line-height: 1;
+    }
+
+    > span {
+      display: block;
+
+      [class="icon-rouble"] {
+        margin-left: 3px;
+      }
+    }
+  }
+
+  &:not(&--in-header) {
+    .fast-bron__part {
+      &:first-child {
+        max-width: rem(636);
+      }
+    }
+
+    .fast-bron__title {
+      margin-top: rem(11);
+    }
+  }
+
+  &--in-header {
+    flex-direction: column;
+
+    .fast-bron__part {
+      max-width: none;
+
+      &:last-child {
+        max-width: rem(351);
+
+        margin: 0 0 0 auto;
+
+        text-align: right;
+      }
+
+      &--flay {
+        display: initial;
+      }
+    }
+
+    .fast-bron__text {
+      display: none;
+    }
+
+    .fast-bron__text-op {
+      margin-bottom: rem(21);
+    }
+
+    .fast-bron__part-bottom {
+      display: none;
+    }
+  }
+  @include max-wide(laptop) {
+    &:not(&--in-header) {
+      flex-flow: column;
+    }
+  }
+
+  @include max-wide(laptop) {
+    &:not(&--in-header) {
+      .fast-bron__part {
+        &:last-child {
+          text-align: right;
+          margin: rem(70) 0 0 auto;
+        }
+      }
+    }
+  }
+
+  @include max-wide(phones) {
+    &:not(&--in-header) {
+      .fast-bron__part {
+        &:last-child {
+          margin-left: 0;
+          text-align: left;
+        }
+
+        &-bottom {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

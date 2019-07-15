@@ -1,0 +1,139 @@
+.about-us {
+  $about-us-item-offset: rem(15);
+  $about-us-item-size: rem(241) + ($about-us-item-offset*2);
+
+  &__top {
+    margin: 0 0 3.25449% calc(50% + #{$about-us-item-offset});
+  }
+
+  &__title {
+    @extend .title--h2;
+    @extend .divider--long;
+
+    margin-bottom: rem(24);
+
+    &-sub {
+      @extend .text--capt;
+
+      font-weight: normal;
+    }
+
+    &:after {
+      margin: 0;
+    }
+  }
+
+  &__list {
+    position: relative;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    max-width: $about-us-item-size * 4;
+
+    margin: 0 (-$about-us-item-offset);
+    padding-top: var(--about-us-list-spacer-t, rem(83));
+
+    //display: grid;
+    //grid-column-gap: rem(30);
+    //grid-template-rows: auto auto auto [row-end];
+    //grid-template-columns: rem(240) rem(240) rem(240) rem(240) ;
+
+    //margin: 0 (-$about-us-item-offset);
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      bottom: var(--about-us-list-substrate-b, rem(-10));
+      right: calc(var(--about-us-list-substrate-r, 50%) + 18%);
+      z-index: -1;
+
+      min-width: rem(644);
+
+      content: '';
+
+      background-color: var(--cl-gray-fr);
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    flex-direction: column;
+    flex: 0 1 calc((100% - calc(#{$about-us-item-offset} * var(--about-us-item-colum-count, 8))) / var(--about-us-item-colum, 4));
+
+    margin: 0 $about-us-item-offset var(--about-us-item-offset-b, rem(83));
+
+    [class*="mti-"] {
+      margin-bottom: rem(33);
+
+      font-size: var(--about-us-item-icon, rem(66));
+      color: $color-primary;
+    }
+  }
+
+  &__capt {
+    @extend .text--capt;
+
+    margin-bottom: rem(15);
+
+    font-weight: 600;
+  }
+
+  &__text {
+    font-size: rem(13);
+    line-height: normal;
+  }
+
+  &__bootom {
+    max-width: 50%;
+    margin-left: auto;
+
+    padding: rem(27) $about-us-item-offset rem(16);
+  }
+
+  @include min-wide(tablet) {
+    &__top {
+    }
+
+    &__list {
+      justify-content: flex-end;
+
+      margin: 0 auto;
+    }
+
+    &__item {
+      &:nth-child(5) {
+        margin-left: auto;
+      }
+    }
+    &__capt {
+      font-weight: bold;
+    }
+  }
+
+  @include max-wide(tablet) {
+    --about-us-item-colum: 3;
+    --about-us-item-colum-count: 8;
+
+    &__top {
+      margin-left: auto;
+    }
+  }
+
+  @include max-wide(phones) {
+    --about-us-list-substrate-r: 10%;
+    --about-us-list-substrate-b: 40%;
+    --about-us-list-spacer-t: #{rem(52)};
+
+    --about-us-item-colum: 2;
+    --about-us-item-colum-count: 4;
+    --about-us-item-offset-b: #{rem(52)};
+    --about-us-item-icon: #{rem(52)};
+
+    &__top {
+      margin-left: auto;
+    }
+  }
+}

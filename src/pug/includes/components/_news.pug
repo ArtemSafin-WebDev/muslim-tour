@@ -1,0 +1,14 @@
+.news
+    section.news__list
+        each item in sliderNewsList
+            -
+                var newsCardImg = item.img,
+                newsCardData   = item.data,
+                newsCardTitle= item.title,
+                newsCardText  = item.text;
+
+            article.news__list-item
+                include _news-card
+
+    footer.news__nav
+        include _pagination

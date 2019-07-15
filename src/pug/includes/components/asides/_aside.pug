@@ -1,0 +1,8 @@
+mixin aside(classModicator, titles)
+    aside.aside(class=classModicator)
+        header.aside__head=titles
+
+        article.aside__contnet
+            block
+
+        button.aside__button(type="button")

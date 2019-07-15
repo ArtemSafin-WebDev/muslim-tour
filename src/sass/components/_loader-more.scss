@@ -1,0 +1,10 @@
+.loader-more {
+  svg {
+    width: rem(80);
+    height: rem(80);
+
+    fill: $color-primary;
+
+    animation: loading-round 3s linear infinite;
+  }
+}

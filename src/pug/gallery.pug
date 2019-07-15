@@ -1,0 +1,22 @@
+extends  includes/@layout
+
+prepend head
+    -  pageTitle = 'Фотогалерея'
+
+block content
+    main.layout
+        section.layout__section
+            + page-header('Фотогалерея','page-header--gallery page-header--is-fade',subSecondMenuList,3)
+                a.page-header__link(href="#")
+                    i.mti-video-play
+                    | Смотреть фильм о Хадже
+        section.layout__section
+            .layout__wrapper
+                .layout__content
+                    article.layout__main
+                        include includes/components/_gallery
+
+                    include includes/components/asides/_aside-news.pug
+        section.layout__section.layout__section--join-us
+            .layout__wrapper
+                include includes/components/_join-us
