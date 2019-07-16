@@ -6,7 +6,7 @@
 
   height: var(--page-header-height);
 
-  margin: (- $topOffset) 0 0;
+  margin: (-$topOffset) 0 0;
 
   background: var(--page-header-image) no-repeat top center fixed;
   background-size: var(--page-header-bg-width, auto) var(--page-header-height);
@@ -50,14 +50,14 @@
     letter-spacing: $letterSpacing;
 
     text-transform: uppercase;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
     [class*="mti-"] {
       margin-right: rem(17);
 
       font-size: rem(20);
 
-      transition: transform .5s ease-in-out;
+      transition: transform 0.5s ease-in-out;
     }
   }
 
@@ -71,7 +71,8 @@
   }
 
   &--is-fade {
-    &, &-v {
+    &,
+    &-v {
       position: relative;
 
       &:before {
@@ -83,7 +84,7 @@
         width: 100%;
         height: 100%;
 
-        content: '';
+        content: "";
 
         background: var(--page-header-img-gradient);
       }
@@ -114,6 +115,33 @@
 
   &--schedule {
     --page-header-image: #{$to-bg-schedule};
+    &::before {
+      content: "";
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 80px;
+      background-image: linear-gradient(
+        to top,
+        rgba(black, 0.65),
+        rgba(black, 0)
+      );
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 160px;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(black, 0.65),
+        rgba(black, 0)
+      );
+    }
   }
 
   &--detail {
@@ -153,7 +181,9 @@
       z-index: 1;
     }
 
-    .page-header__crumbs, .page-header__caption, .page-header__bottom {
+    .page-header__crumbs,
+    .page-header__caption,
+    .page-header__bottom {
       max-width: rem(490);
       width: 100%;
     }
@@ -170,7 +200,13 @@
   }
 
   img {
-    position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
   }
 
   @include min-wide(notebook) {
@@ -189,7 +225,7 @@
       }
 
       &:active {
-        transform: scale(1.03)
+        transform: scale(1.03);
       }
     }
   }
@@ -215,6 +251,5 @@
 
       color: $color-primary;
     }
-
   }
 }
