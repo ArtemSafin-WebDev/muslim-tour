@@ -53,6 +53,12 @@
     }
   }
 
+  &--news {
+    .swiper-button-prev, .swiper-button-next {
+      margin: 0;
+    }
+  }
+
   &--reviews {
     .swiper-container {
       overflow: initial;
@@ -265,7 +271,7 @@
     .swiper-container {
       position: static;
       z-index: initial;
-
+      // width: 100%;
       display: flex;
     }
 
@@ -276,7 +282,17 @@
     .swiper-nav {
       position: relative;
       z-index: 2;
-      margin: auto var(--swiper-nav-left-spacer, rem(178)) 0 0;
+      // margin: auto var(--swiper-nav-left-spacer, rem(178)) 0 0;
+      width: 300px;
+      width: 18rem;
+      flex-shrink: 0;
+      align-items: flex-end;
+      // display: none;
+     
+      @include max-wide(phones) {
+        justify-content: flex-end;
+       
+      }
     }
 
     @include min-wide(phones) {

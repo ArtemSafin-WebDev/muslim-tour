@@ -2,7 +2,7 @@ let reviewsSlider = new Swiper('.swiper--reviews .swiper-container', {
     speed: 1000,
     parallax: true,
     loop: true,
-    // loop: true,
+    
     slidesPerView: 'auto',
     navigation: {
         nextEl: '.swiper-button-next',

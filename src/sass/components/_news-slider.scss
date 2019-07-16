@@ -3,6 +3,8 @@
 
   padding: rem(80) 0 0;
 
+
+  // margin-right: calc((100vw - 100%) / 2 * -1);
   &:before {
     position: absolute;
     top: 0;
@@ -36,11 +38,19 @@
     z-index: 3;
 
     color: $color-light;
+
+
+
+    // width: 300px;
   }
 
   &__swiper {
-    width: 100vw;
+    // width: 100vw;
+    // width: 100%;
     margin: rem(-133) 0 rem(71);
+    margin-right: calc((100vw - 100%) / 2 * -1);
+
+    
   }
 
   &__bottom {
@@ -63,6 +73,9 @@
       max-width: rem(180);
 
       margin-bottom: rem(48);
+
+
+     
     }
   }
 }
