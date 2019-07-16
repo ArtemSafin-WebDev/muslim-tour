@@ -16,6 +16,7 @@
 @import "core/animate";
 @import "core/scroll-fix";
 @import "core/svg";
+@import "core/dirty-width-fixes";
 ///*------------------------------------------- libs*/
 //@import 'libs/';
 /*------------------------------------------- layout*/
@@ -132,6 +133,15 @@
   margin-top: -15vh;
   filter: blur(2vw);
   position: relative;
+
+  @include max-wide(tablet) {
+    min-height: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+  }
 }
 .dv__bg video.active {z-index: 2;}
 .dv__bg video:nth-child(2) {
