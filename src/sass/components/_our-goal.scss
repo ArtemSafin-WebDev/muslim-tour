@@ -1,49 +1,63 @@
 .our-goal {
-  margin-bottom: var(--our-goal-spacer, rem(150));
+    margin-bottom: var(--our-goal-spacer, rem(150));
 
-  background-color: var(--cl-gray-fr);
+    background-color: var(--cl-gray-fr);
+    text-align: center;
 
-  &__content {
-    @extend .container;
+    &__content {
+        @extend .container;
+        display: flex;
+        flex-direction: column;
+        padding: rem(45) 0;
+        min-height: var(--our-goal-height, rem(580));
+        @include max-wide(phones) {
+          min-height: rem(534);
+        }
+        &::after {
+            content: "";
+            font-size: var(--divider-size, 2.375rem);
+            font-family: muslim-icons;
+            line-height: 1;
+            color: var(--cl-green);
+            pointer-events: none;
+            margin-top: rem(34);
+        }
+    }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    &__title {
+        @extend .text--birk;
+        font-size: rem(16);
+        margin-bottom: rem(34);
 
-    min-height: var(--our-goal-height, rem(775));
-  }
+        line-height: 1.76;
+        letter-spacing: rem(2);
+    }
 
-  &__title {
-    @extend .text--birk;
+    &__message {
+        max-width: 90%;
+        margin: auto;
+        font-size: var(--our-goal-fn, rem(38));
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.73;
+        letter-spacing: rem(3.9);
+        @include max-wide(phones) {
+          font-size: rem(25);
+        }
+    }
 
-    margin-bottom: rem(17);
+    @include max-wide(laptop) {
+        //--our-goal-width: #{rem()};
+        --our-goal-height: #{rem(600)};
+        --our-goal-spacer: #{rem(120)};
+    }
 
-    line-height: 2.15;
-    letter-spacing: rem(2);
-  }
+    @include max-wide(tablet) {
+        --our-goal-spacer: #{rem(90)};
+        --our-goal-height: #{rem(400)};
+    }
 
-  &__message {
-    max-width: var(--our-goal-width, rem(1176));
-
-    font-size: var(--our-goal-fn, rem(40));
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.73;
-    letter-spacing: rem(3.9);
-  }
-
-  @include max-wide(laptop) {
-    //--our-goal-width: #{rem()};
-    --our-goal-height: #{rem(600)};
-    --our-goal-spacer: #{rem(120)};
-  }
-
-  @include max-wide(tablet) {
-    --our-goal-spacer: #{rem(90)};
-    --our-goal-height: #{rem(400)};
-  }
-
-  @include max-wide(phones) {
-    --our-goal-fn: #{rem(32)};
-  }
+    @include max-wide(phones) {
+        --our-goal-fn: #{rem(32)};
+    }
 }

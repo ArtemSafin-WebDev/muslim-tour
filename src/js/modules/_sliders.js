@@ -125,14 +125,14 @@ let videoSliderThumbs = new Swiper(".swiper--video .swiper-thumbs", {
   slidesPerView: 7,
   loop: true,
   freeMode: true,
-  loopedSlides: 8,
+  // loopedSlides: 8,
   watchSlidesVisibility: true,
   watchSlidesProgress: true,
   breakpoints: {
     640: {
       spaceBetween: 10,
       slidesPerView: 3,
-      loopedSlides: 4
+      // loopedSlides: 4
       // slidesPerView: 'auto',
       // slidesPerView: 1,
       // spaceBetween: 42,
@@ -144,7 +144,7 @@ let videoSliderTop = new Swiper(".swiper--video .swiper-top", {
   speed: 600,
   effect: "fade",
   spaceBetween: 16,
-  load: true,
+  // load: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"

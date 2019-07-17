@@ -117,6 +117,7 @@
     font-size: rem(13);
     text-transform: uppercase;
     letter-spacing: rem(2);
+    margin-right: rem(15);
   }
 
   &__time {
@@ -171,7 +172,9 @@
     display: flex;
     font-size: rem(13);
     line-height: 1.15;
-
+    width: 50%;
+    flex-grow: 1;
+    flex-wrap: wrap;
     &-item {
       display: inline-flex;
       flex-direction: column;
