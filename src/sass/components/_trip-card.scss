@@ -103,7 +103,7 @@
 
     margin-right: rem(14);
 
-    white-space: nowrap;
+    
 
     &--plus {
       padding-top: rem(30);
@@ -121,6 +121,7 @@
 
   &__time {
     @extend .text;
+    text-align: right;
   }
 
   &__capt {
@@ -165,9 +166,9 @@
 
   &__info {
     min-width: rem(200);
-
+    flex-shrink: 0;
     padding-right: 8%;
-
+    display: flex;
     font-size: rem(13);
     line-height: 1.15;
 

@@ -934,17 +934,10 @@ body .dv__mob-menu.active {
   width: 10px;
   height: 10px;
   margin-top: -5px;
-  transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-
+  transform: rotate(45deg);
+  
   transition: transform 0.35s;
-  -o-transition: transform 0.35s;
-  -ms-transition: transform 0.35s;
-  -moz-transition: transform 0.35s;
-  -webkit-transition: transform 0.35s;
+  
 }
 .dv__mob_menu ul li > ul {
   border-top: 1px solid rgba(255,255,255,0.3);
@@ -957,11 +950,7 @@ body .dv__mob-menu.active {
   padding: 10px 1px;
 }
 li.dv__more.active > a:before {
-  transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+  transform: rotate(0deg);
 }
 
 @media (max-width: 1181px) {

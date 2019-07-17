@@ -206,11 +206,13 @@ function moveElementDown(item) {
             $(this).removeClass("active");
             $(".dv__blur").removeClass("active");
             $("body").css("overflow", "auto");
+            $("html").css("overflow", "auto");
             $(".dv__mob-menu").removeClass("active");
         } else {
             $(this).addClass("active");
             $(".dv__blur").addClass("active");
             $("body").css("overflow", "hidden");
+            $("html").css("overflow", "hidden");
             $(".dv__mob-menu").addClass("active");
         }
     });
