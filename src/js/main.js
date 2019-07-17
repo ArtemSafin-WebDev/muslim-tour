@@ -231,4 +231,18 @@ function moveElementDown(item) {
         $('.loader').removeClass('loader--open');
     });
 
+
+
+
+    // Фикс модалок
+
+    var modalsInsideLayout = document.querySelector('.layout .modals');
+
+    if (modalsInsideLayout) {
+        document.body.appendChild(modalsInsideLayout);
+    }
+
+
+
+
 })();
