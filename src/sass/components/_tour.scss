@@ -141,6 +141,10 @@
     &--of-docs {
       li {
         margin-bottom: rem(48);
+        i img {
+          height: 54px;
+          width: auto;
+        }
       }
     }
   }
