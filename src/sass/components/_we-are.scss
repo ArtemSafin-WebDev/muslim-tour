@@ -64,10 +64,15 @@
         display: inline-flex;
         align-items: center;
 
+        a {
+          margin-right: rem(30);
+          img {
+            margin-right: 0;
+          }
+        }
+        
         img {
             width: rem(142);
-            height: rem(202);
-
             margin-right: rem(30);
         }
 
