@@ -14,7 +14,7 @@
       margin-top: var(--layout-section-top-gutter, 0);
     }
 
-    &:not(&--ticker) {
+    &:not(&--ticker):not(&--travel) {
       --layout-section-top-gutter: #{rem(60)};
     }
 

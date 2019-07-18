@@ -123,7 +123,7 @@ if (articlesSliderContainer) {
 let videoSliderThumbs = new Swiper(".swiper--video .swiper-thumbs", {
   spaceBetween: 16,
   slidesPerView: 7,
-  loop: true,
+  // loop: false,
   freeMode: true,
   // loopedSlides: 8,
   watchSlidesVisibility: true,

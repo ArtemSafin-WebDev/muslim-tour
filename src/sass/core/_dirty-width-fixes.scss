@@ -16,9 +16,7 @@
   padding: 0;
 }
 
-.landing-header + .landing-main .block-wrapper:not(.block-tours-01-tours),
-.landing-header + .landing-main .block-wrapper:not(.block-index-01-ticker),
-.landing-header + .landing-main .block-wrapper:not(.block-tours-02-filter) {
+.landing-header + .landing-main .block-wrapper:not(.block-tours-01-tours):not(.block-index-01-ticker):not(.block-tours-02-filter) {
   &:first-child {
     margin-top: 5rem;
   }
