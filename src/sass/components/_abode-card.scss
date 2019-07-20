@@ -5,15 +5,12 @@
   --abode-card-top-offset: calc(-0px - var(--abode-card-spacer-r));
 
   position: relative;
-
-  height: max-content;
-
   padding: rem(30) var(--abode-card-spacer-r) rem(30) rem(30);
-
   background-color: var(--cl-gray-fr);
-
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
   cursor: default;
-
   &__top {
     @extend .text--addit ;
 
@@ -78,9 +75,9 @@
 
     font-weight: 600;
 
-    &:hover {
-      color: $color-secondary;
-    }
+    // &:hover {
+    //   color: $color-secondary;
+    // }
   }
 
   &__info {
@@ -93,7 +90,7 @@
     @extend .text--addit ;
 
     list-style: none;
-
+    margin-top: auto;
     li {
       display: inline-flex;
       align-items: center;

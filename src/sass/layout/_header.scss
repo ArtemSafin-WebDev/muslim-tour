@@ -91,9 +91,9 @@ $header-height: $topOffset;
       }
     }
 
-    &--is-active {
-      pointer-events: none;
-    }
+    // &--is-active {
+    //   pointer-events: none;
+    // }
   }
 
   &__button {

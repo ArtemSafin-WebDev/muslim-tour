@@ -1,7 +1,7 @@
-const JOIN_US_CLASS_SHOW_ALERT = 'join-us__alert--show';
+const JOIN_US_CLASS_SHOW_ALERT = "join-us__alert--show";
 
-let $joinUsBlock = $('.join-us'),
-    $joinUsBlockAlert = $('.join-us__alert'),
+let $joinUsBlock = $(".join-us"),
+    $joinUsBlockAlert = $(".join-us__alert"),
     statusSent = true;
 
 function showJoinUsAlert() {
@@ -26,15 +26,16 @@ function hideJoinUsAlert() {
     }
 });*/
 
-$joinUsBlockAlert.click(function () {
+$joinUsBlockAlert.click(function() {
     hideJoinUsAlert();
 });
 
 $(document).ready(function() {
-    $('#reviewModal').on('shown.bs.modal', function (e) {
+    var reviewFormListenersAdded = false;
+    $("#reviewModal").on("shown.bs.modal", function(e) {
         var modal = $(this);
-        var form = modal.find('form');
-        var button = form.find('button');
+        var form = modal.find("form");
+        var button = form.find("button");
         var agreement = form.find('input[name="agreement"]');
 
         var name = form.find('input[name="name"]');
@@ -42,61 +43,61 @@ $(document).ready(function() {
         var phone = form.find('input[name="phone"]');
         var review = form.find('textarea[name="review"]');
 
-        if(agreement.is(':checked'))
-            button.removeAttr('disabled');
-        else
-            button.attr('disabled', 'disabled');
+        if (agreement.is(":checked")) button.removeAttr("disabled");
+        else button.attr("disabled", "disabled");
 
-        agreement.change(function () {
-            if ($(this).is(':checked'))
-                button.removeAttr('disabled');
-            else
-                button.attr('disabled', 'disabled');
-        });
+        if (!reviewFormListenersAdded) {
+            agreement.change(function() {
+                if ($(this).is(":checked")) button.removeAttr("disabled");
+                else button.attr("disabled", "disabled");
+            });
+            form.submit(function(event) {
+                event.preventDefault();
 
-        form.submit(function (event) {
-            event.preventDefault();
+                if (name.val() == "") alert("Укажите имя");
+                else if (email.val() == "" && phone.val() == "")
+                    alert("Укажите Телефон или Email");
+                else if (review.val() == "") alert("Напишите текст отзыва");
+                else if (!agreement.is(":checked"))
+                    alert("Дайте согласие на обработку персональных данных");
+                else {
+                    $(".loader").addClass("loader--open");
 
-            if (name.val() == '')
-                alert('Укажите имя');
-            else if (email.val() == '' && phone.val() == '')
-                alert('Укажите Телефон или Email');
-            else if (review.val() == '')
-                alert('Напишите текст отзыва');
-            else if (!agreement.is(':checked'))
-                alert('Дайте согласие на обработку персональных данных');
-            else {
-                $('.loader').addClass('loader--open');
+                    $.ajax({
+                        url: "/.ajax.php",
+                        type: "post",
+                        data: form.serialize() + "&TYPE=review",
+                        dataType: "json",
+                        success: function(data) {
+                            $(".loader").removeClass("loader--open");
 
-                $.ajax({
-                    url: '/.ajax.php',
-                    type: 'post',
-                    data: form.serialize() + '&TYPE=review',
-                    dataType: 'json',
-                    success: function (data) {
-                        $('.loader').removeClass('loader--open');
-
-                        if (data.success) {
-                            modal.modal('hide');
-                            $('#thanksDoneModal').find('.thanks-done__caption').text('Спасибо за ваш отзыв');
-                            $('#thanksDoneModal').find('.thanks-done__description').text('');
-                            $('#thanksDoneModal').modal('show');
+                            if (data.success) {
+                                modal.modal("hide");
+                                $("#thanksDoneModal")
+                                    .find(".thanks-done__caption")
+                                    .text("Спасибо за ваш отзыв");
+                                $("#thanksDoneModal")
+                                    .find(".thanks-done__description")
+                                    .text("");
+                                $("#thanksDoneModal").modal("show");
+                            }
+                        },
+                        error: function() {
+                            $(".loader").removeClass("loader--open");
+                            alert("Не удалось отправить. Попробуйте еще раз");
                         }
-
-                    },
-                    error: function () {
-                        $('.loader').removeClass('loader--open');
-                        alert('Не удалось отправить. Попробуйте еще раз');
-                    }
-                });
-            }
-        });
+                    });
+                }
+            });
+            reviewFormListenersAdded = true;
+        }
     });
 
-    $('#orderModal').on('shown.bs.modal', function (event) {
+    var orderFormListenersAdded = false;
+    $("#orderModal").on("shown.bs.modal", function(event) {
         var modal = $(this);
-        var form = modal.find('form');
-        var button = form.find('button');
+        var form = modal.find("form");
+        var button = form.find("button");
         var agreement = form.find('input[name="agreement"]');
 
         var tour = form.find('input[name="tour"]');
@@ -104,61 +105,65 @@ $(document).ready(function() {
         var email = form.find('input[name="email"]');
         var phone = form.find('input[name="phone"]');
 
-        tour.val($(event.relatedTarget).data('tour'));
+        tour.val($(event.relatedTarget).data("tour"));
 
-        if(agreement.is(':checked'))
-            button.removeAttr('disabled');
-        else
-            button.attr('disabled', 'disabled');
+        if (agreement.is(":checked")) button.removeAttr("disabled");
+        else button.attr("disabled", "disabled");
 
-        agreement.change(function () {
-            if ($(this).is(':checked'))
-                button.removeAttr('disabled');
-            else
-                button.attr('disabled', 'disabled');
-        });
+        if (!orderFormListenersAdded) {
+            agreement.change(function() {
+                if ($(this).is(":checked")) button.removeAttr("disabled");
+                else button.attr("disabled", "disabled");
+            });
 
-        form.submit(function (event) {
-            event.preventDefault();
+            form.submit(function(event) {
+                event.preventDefault();
 
-            if (name.val() == '')
-                alert('Укажите имя');
-            else if (email.val() == '' && phone.val() == '')
-                alert('Укажите Телефон или Email');
-            else if (!agreement.is(':checked'))
-                alert('Дайте согласие на обработку персональных данных');
-            else {
-                $('.loader').addClass('loader--open');
+                if (name.val() == "") alert("Укажите имя");
+                else if (email.val() == "" && phone.val() == "")
+                    alert("Укажите Телефон или Email");
+                else if (!agreement.is(":checked"))
+                    alert("Дайте согласие на обработку персональных данных");
+                else {
+                    $(".loader").addClass("loader--open");
 
-                $.ajax({
-                    url: '/.ajax.php',
-                    type: 'post',
-                    data: form.serialize() + '&TYPE=order',
-                    dataType: 'json',
-                    success: function (data) {
-                        $('.loader').removeClass('loader--open');
+                    $.ajax({
+                        url: "/.ajax.php",
+                        type: "post",
+                        data: form.serialize() + "&TYPE=order",
+                        dataType: "json",
+                        success: function(data) {
+                            $(".loader").removeClass("loader--open");
 
-                        if (data.success) {
-                            modal.modal('hide');
-                            $('#thanksDoneModal').find('.thanks-done__caption').text('Спасибо за обращение!');
-                            $('#thanksDoneModal').find('.thanks-done__description').text('Мы вам перезвоним в течении 15 минут.');
-                            $('#thanksDoneModal').modal('show');
+                            if (data.success) {
+                                modal.modal("hide");
+                                $("#thanksDoneModal")
+                                    .find(".thanks-done__caption")
+                                    .text("Спасибо за обращение!");
+                                $("#thanksDoneModal")
+                                    .find(".thanks-done__description")
+                                    .text(
+                                        "Мы вам перезвоним в течении 15 минут."
+                                    );
+                                $("#thanksDoneModal").modal("show");
+                            }
+                        },
+                        error: function() {
+                            $(".loader").removeClass("loader--open");
+                            alert("Не удалось отправить. Попробуйте еще раз");
                         }
+                    });
+                }
+            });
 
-                    },
-                    error: function () {
-                        $('.loader').removeClass('loader--open');
-                        alert('Не удалось отправить. Попробуйте еще раз');
-                    }
-                });
-            }
-        });
+            orderFormListenersAdded = true;
+        }
     });
 
-    $('.layout__section .join-us__form').each(function(){
+    $(".layout__section .join-us__form").each(function() {
         var form = $(this);
-
-        var button = form.find('button');
+        var listenersAdded = false;
+        var button = form.find("button");
 
         var agreement = form.find('input[name="agreement"]');
 
@@ -167,53 +172,55 @@ $(document).ready(function() {
         var phone = form.find('input[name="phone"]');
         var comment = form.find('textarea[name="comment"]');
 
-        if(agreement.is(':checked'))
-            button.removeAttr('disabled');
-        else
-            button.attr('disabled', 'disabled');
+        if (agreement.is(":checked")) button.removeAttr("disabled");
+        else button.attr("disabled", "disabled");
 
-        agreement.change(function(){
-            if($(this).is(':checked'))
-                button.removeAttr('disabled');
-            else
-                button.attr('disabled', 'disabled');
-        });
+        if (!listenersAdded) {
+            agreement.change(function() {
+                if ($(this).is(":checked")) button.removeAttr("disabled");
+                else button.attr("disabled", "disabled");
+            });
 
-        form.submit(function(event){
-            event.preventDefault();
+            form.submit(function(event) {
+                event.preventDefault();
 
-            if(name.val() == '')
-                alert('Укажите имя');
-            else if(email.val() == '' && phone.val() == '')
-                alert('Укажите Телефон или Email');
-            else if(comment.val() == '')
-                alert('Напишите текст комментария');
-            else if(!agreement.is(':checked'))
-                alert('Дайте согласие на обработку персональных данных');
-            else {
-                $('.loader').addClass('loader--open');
+                if (name.val() == "") alert("Укажите имя");
+                else if (email.val() == "" && phone.val() == "")
+                    alert("Укажите Телефон или Email");
+                else if (comment.val() == "")
+                    alert("Напишите текст комментария");
+                else if (!agreement.is(":checked"))
+                    alert("Дайте согласие на обработку персональных данных");
+                else {
+                    $(".loader").addClass("loader--open");
 
-                $.ajax({
-                    url : '/.ajax.php',
-                    type: 'post',
-                    data: form.serialize() + '&TYPE=callback',
-                    dataType: 'json',
-                    success: function(data){
-                        $('.loader').removeClass('loader--open');
+                    $.ajax({
+                        url: "/.ajax.php",
+                        type: "post",
+                        data: form.serialize() + "&TYPE=callback",
+                        dataType: "json",
+                        success: function(data) {
+                            $(".loader").removeClass("loader--open");
 
-                        if(data.success){
-                            $('#thanksDoneModal').find('.thanks-done__caption').text('Спасибо за обращение!');
-                            $('#thanksDoneModal').find('.thanks-done__description').text('');
-                            $('#thanksDoneModal').modal('show');
+                            if (data.success) {
+                                $("#thanksDoneModal")
+                                    .find(".thanks-done__caption")
+                                    .text("Спасибо за обращение!");
+                                $("#thanksDoneModal")
+                                    .find(".thanks-done__description")
+                                    .text("");
+                                $("#thanksDoneModal").modal("show");
+                            }
+                        },
+                        error: function() {
+                            $(".loader").removeClass("loader--open");
+                            alert("Не удалось отправить. Попробуйте еще раз");
                         }
+                    });
+                }
+            });
 
-                    },
-                    error: function(){
-                        $('.loader').removeClass('loader--open');
-                        alert('Не удалось отправить. Попробуйте еще раз');
-                    }
-                });
-            }
-        });
+            listenersAdded = true;
+        }
     });
 });

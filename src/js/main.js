@@ -91,19 +91,19 @@ function moveElementDown(item) {
                 v2.removeClass("active");
                 v3.addClass("active");
                 v4.removeClass("active");
-                v1[0].play();
-                v2[0].pause();
-                v3[0].play();
-                v4[0].pause();
+                // v1[0].play();
+                // v2[0].pause();
+                // v3[0].play();
+                // v4[0].pause();
             } else {
                 v2.addClass("active");
                 v1.removeClass("active");
                 v4.addClass("active");
                 v3.removeClass("active");
-                v2[0].play();
-                v1[0].pause();
-                v4[0].play();
-                v3[0].pause();
+                // v2[0].play();
+                // v1[0].pause();
+                // v4[0].play();
+                // v3[0].pause();
             }
 
             clearTimeout(dvTimeoutAnim);
@@ -184,19 +184,19 @@ function moveElementDown(item) {
                 v2.removeClass("active");
                 v3.addClass("active");
                 v4.removeClass("active");
-                v1[0].play();
-                v2[0].pause();
-                v3[0].play();
-                v4[0].pause();
+                // v1[0].play();
+                // v2[0].pause();
+                // v3[0].play();
+                // v4[0].pause();
             } else {
                 v2.addClass("active");
                 v1.removeClass("active");
                 v4.addClass("active");
                 v3.removeClass("active");
-                v2[0].play();
-                v1[0].pause();
-                v4[0].play();
-                v3[0].pause();
+                // v2[0].play();
+                // v1[0].pause();
+                // v4[0].play();
+                // v3[0].pause();
             }
         }
     });
@@ -244,7 +244,11 @@ function moveElementDown(item) {
         document.body.appendChild(modalsInsideLayout);
     }
 
+    // Фикс видео
+    var videos = Array.prototype.slice.call(document.querySelectorAll('.dv__bg video'));
 
-
+    videos.forEach(function(video) {
+        video.setAttribute('playsinline', '');
+    })
 
 })();
