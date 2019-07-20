@@ -94,6 +94,7 @@
 
         object-fit: contain;
         object-position: center;
+        order: 2;
     }
 
     &__bootom {
@@ -150,8 +151,9 @@
         &--doing {
             .we-are__right-image {
                 margin-right: auto;
+                order: 2;
+                // margin-top: 5rem;
 
-                margin-top: 5rem;
             }
 
 
