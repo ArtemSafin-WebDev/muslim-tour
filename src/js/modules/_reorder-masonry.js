@@ -1,4 +1,4 @@
-console.log("Reorder masonry module");
+
 
 const reviewsContainer = document.querySelector(".reviews__list");
 
