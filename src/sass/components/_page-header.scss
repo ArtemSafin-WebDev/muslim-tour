@@ -22,6 +22,7 @@
         display: flex;
         flex-flow: column;
         align-items: flex-start;
+        padding-bottom: rem(70);
     }
 
     &__crumbs {
@@ -32,15 +33,20 @@
         @extend .title;
 
         line-height: 0.98;
-
+        margin-top: auto;
         margin: auto 0;
-        padding-top: 200px;
+        // padding-top: 200px;
+        // margin-bottom: rem(58);
     }
 
     &__bottom {
         width: 100%;
 
-        margin: rem(58) 0 0;
+        // margin: rem(58) 0 0;
+        position: absolute;
+        bottom: 0;
+        left: var(--content-padding);
+        right: var(--content-padding);
     }
 
     &__link {
