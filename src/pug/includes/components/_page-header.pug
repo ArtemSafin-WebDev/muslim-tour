@@ -13,6 +13,7 @@ mixin page-header(title, modif, listMenu, activeItem, titleSecond, toursHeader)
                 .page-header__caption=title
 
             .page-header__bottom
-                if (listMenu !== null & activeItem !== null)
-                    +tab-menu(listMenu, activeItem)
+                +tab-menu(listMenu, activeItem)
+                if (toursHeader)
+                    +tab-menu(listMenu, activeItem, toursHeader)
                 block
