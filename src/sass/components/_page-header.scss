@@ -11,8 +11,6 @@
     background: var(--page-header-image) no-repeat top center fixed;
     background-size: var(--page-header-bg-width, auto) var(--page-header-height);
 
-    
-
     &__content {
         @extend .container;
 
@@ -35,14 +33,23 @@
         line-height: 0.98;
         margin-top: auto;
         margin: auto 0;
-        // padding-top: 200px;
-        // margin-bottom: rem(58);
+        
+        &-link {
+            opacity: 0.5;
+            transition: all 0.2s;
+            margin-right: 3rem;
+            &.active {
+                opacity: 1;
+            }
+            &:link,
+            &:visited {
+                color: white;
+            }
+        }
     }
 
     &__bottom {
         width: 100%;
-
-        // margin: rem(58) 0 0;
         position: absolute;
         bottom: 0;
         left: var(--content-padding);

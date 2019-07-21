@@ -1,10 +1,16 @@
-mixin page-header(title, modif, listMenu, activeItem)
+mixin page-header(title, modif, listMenu, activeItem, titleSecond, toursHeader)
     .page-header(class=modif)
         .page-header__content
             .page-header__crumbs
                 include _crumbs
 
-            .page-header__caption=title
+            if (toursHeader)
+                .page-header__caption
+                    a.page-header__caption-link.active(href="#")=title
+                    if (titleSecond !== null)
+                        a.page-header__caption-link(href="#")=titleSecond
+            else 
+                .page-header__caption=title
 
             .page-header__bottom
                 if (listMenu !== null & activeItem !== null)
