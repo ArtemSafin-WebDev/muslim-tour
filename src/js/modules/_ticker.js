@@ -1,10 +1,13 @@
 
 let ticker = document.querySelector(".ticker__text");
 let initialAnimationPlayed = false;
-const animationDuration = 10;
+let animationDurationMultiplier = 5;
 
 
 function setAnimationDuration() {
+    let tickerWidth = ticker.offsetWidth;
+    let viewportWidth = window.innerWidth;
+    let animationDuration = (tickerWidth / viewportWidth) * animationDurationMultiplier;
     ticker.style.animationDuration = `${animationDuration}s`;
 }
 
@@ -39,6 +42,7 @@ if (ticker) {
 
     setAnimation();
 
+    window.addEventListener('resize', setAnimationDuration)
 }
 
 
