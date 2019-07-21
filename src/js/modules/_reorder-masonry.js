@@ -19,24 +19,20 @@ if (reviewsContainer) {
 
     function scrollToTheBottomHandler() {
         let newElements = [];
-        console.log(loading);
-        console.log(window.pageYOffset)
-        console.log(reviewsContainer.scrollTop + reviewsContainer.offsetHeight)
+
         if (!loading) {
             if (
                 window.pageYOffset >=
                 reviewsContainer.scrollTop + reviewsContainer.offsetHeight
             ) {
-                console.log("Scrolled to the bottom");
                 page++;
                 loader.style.display = "block";
                 loading = true;
                 setTimeout(function() {
-                    console.log("Timeout function executed");
-                    newElements = Array.from(
+                    newElements = Array.prototype.slice.call(
                         reviewsContainer.cloneNode(true).children
                     );
-                    console.log("New elements", newElements);
+
                     reviewsContainer.append(...newElements);
                     masonry.appended(newElements);
                     loader.style.display = "none";
