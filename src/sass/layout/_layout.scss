@@ -111,16 +111,15 @@
 
   &__content {
     display: grid;
-    grid-template-columns: var(--layout-template-columns, minmax(100px, max-content) max-content);
-    grid-column-gap: var(--layout-content-gap, 10%); //rem(144)
+    // grid-template-columns: var(--layout-template-columns, minmax(100px, max-content) max-content);
+    // grid-column-gap: var(--layout-content-gap, 10%); 
+    grid-column-gap: 3rem;
+    grid-template-columns: 1fr auto;
 
-    //@include min-wide(laptop) {
-    //  //--layout-content-column-1:
-    //}
+    
 
     @include max-wide(laptop) {
-      --layout-template-columns: 100%;
-      --layout-content-gap: #{$contentGutter};
+      grid-template-columns: 1fr;
     }
   }
 

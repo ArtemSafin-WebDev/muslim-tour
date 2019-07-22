@@ -71,12 +71,11 @@
     &__link {
         display: inline-flex;
         align-items: center;
-        position: absolute;
-        bottom: 5rem;
+        
         font-size: rem(13);
         font-weight: bold;
         letter-spacing: $letterSpacing;
-
+        margin-bottom: rem(75);
         text-transform: uppercase;
         transition: all 0.4s ease-in-out;
 
@@ -237,6 +236,7 @@
 
     @include min-wide(laptop) {
         &__link {
+            margin-bottom: rem(75);
             &:hover {
                 color: $color-primary;
                 text-shadow: 0 rem(1) rem(8) $color-dark;
@@ -254,7 +254,7 @@
     @include max-wide(tablet) {
         &__link {
             max-width: rem(26);
-
+            margin-bottom: rem(75);
             font-size: 0 !important;
 
             [class*="mti-"] {
