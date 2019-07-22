@@ -1,6 +1,8 @@
 
 
-const reviewsContainer = document.querySelector(".reviews__list");
+const reviewsContainer = document.querySelector(".reviews__list.main");
+const reviewsTempContainer = document.querySelector(".reviews__list.temp");
+const reviewsMoreContainer = document.querySelector(".reviews__list.more");
 
 if (reviewsContainer) {
     const masonry = new Masonry(reviewsContainer, {
@@ -20,24 +22,40 @@ if (reviewsContainer) {
     function scrollToTheBottomHandler() {
         let newElements = [];
 
-        if (!loading) {
-            if (
-                window.pageYOffset >=
-                reviewsContainer.scrollTop + reviewsContainer.offsetHeight
-            ) {
-                page++;
-                loader.style.display = "block";
-                loading = true;
-                setTimeout(function() {
-                    newElements = Array.prototype.slice.call(
-                        reviewsContainer.cloneNode(true).children
-                    );
+        if($('.reviews__list.more').children().length) {
+            if (!loading) {
+                if (
+                    window.pageYOffset >=
+                    reviewsContainer.scrollTop + reviewsContainer.offsetHeight
+                ) {
+                    page++;
+                    loader.style.display = "block";
+                    loading = true;
+                    setTimeout(function () {
+                        var i = 0;
+                        $('.reviews__list.temp').empty();
+                        $('.reviews__list.more').children().each(function () {
+                            if (i >= 10)
+                                return;
+                            i++;
+                            var item = $(this);
+                            $('.reviews__list.temp').append(
+                                $('<div />')
+                                    .attr('class', item.attr('class'))
+                                    .html(item.html())
+                            );
+                            item.remove();
+                        });
+                        newElements = Array.prototype.slice.call(
+                            reviewsTempContainer.cloneNode(true).children
+                        );
 
-                    reviewsContainer.append(...newElements);
-                    masonry.appended(newElements);
-                    loader.style.display = "none";
-                    loading = false;
-                }, 2000);
+                        reviewsContainer.append(...newElements);
+                        masonry.appended(newElements);
+                        loader.style.display = "none";
+                        loading = false;
+                    }, 1000);
+                }
             }
         }
     }
