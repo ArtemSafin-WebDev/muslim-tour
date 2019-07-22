@@ -59,7 +59,8 @@
     &__link {
         display: inline-flex;
         align-items: center;
-
+        position: absolute;
+        bottom: 5rem;
         font-size: rem(13);
         font-weight: bold;
         letter-spacing: $letterSpacing;
