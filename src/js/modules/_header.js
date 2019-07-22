@@ -12,11 +12,11 @@ let $header = $('.header'),
     mobMenuTrigger = false;
 
 bodyScrollHide = () => {
-    $('html').addClass(SCROLL_HIDE);
+    // $('html').addClass(SCROLL_HIDE);
 };
 
 bodyScrollAuto = () => {
-    $('html').removeClass(SCROLL_HIDE);
+    // $('html').removeClass(SCROLL_HIDE);
 };
 
 mainMenuShow = (link) => {
@@ -45,7 +45,7 @@ mobMenuShow = () => {
     $headerMenuBtn.addClass('header__button--is-active');
     $mobMenu.addClass('mobile-menu--is-show');
     mobMenuTrigger = true;
-
+    $('body').addClass('mobile-menu-open');
     bodyScrollHide();
     return true;
 };
@@ -56,7 +56,7 @@ mobMenuHide = () => {
     $mobMenu.removeClass('mobile-menu--is-show');
 
     mobMenuTrigger = false;
-
+    $('body').removeClass('mobile-menu-open');
     bodyScrollAuto();
     return false;
 };

@@ -26,7 +26,7 @@ $header-height: $topOffset;
 
   &__logo {
     margin-right: rem(23);
-
+    z-index: 1010;
     svg {
       --color1: var(--headers-text-color);
       --color2: var(--headers-text-color);
@@ -36,6 +36,13 @@ $header-height: $topOffset;
 
       width: rem(138);
       height: rem(55);
+    }
+
+
+    .mobile-menu-open & {
+      position: fixed;
+      
+
     }
   }
 
@@ -108,6 +115,14 @@ $header-height: $topOffset;
     width: 21px;
     height: 21px;
     transition: transform .5s ease-in-out;
+    
+    .mobile-menu-open & {
+      position: fixed;
+      z-index: 1100;
+      top: 27px;
+      right: var(--content-padding);
+
+    }
 
     &:before, &:after {
       position: absolute;

@@ -16,11 +16,11 @@ if (reviewsContainer) {
         masonry.layout();
     });
 
-    let page = 1;
+    // let page = 1;
     let loading = false;
 
     function scrollToTheBottomHandler() {
-        let newElements = [];
+        // let newElements = [];
 
         if($('.reviews__list.more').children().length) {
             if (!loading) {
@@ -46,12 +46,12 @@ if (reviewsContainer) {
                             );
                             item.remove();
                         });
-                        newElements = Array.prototype.slice.call(
-                            reviewsTempContainer.cloneNode(true).children
-                        );
+                        // newElements = Array.prototype.slice.call(
+                        //     reviewsTempContainer.cloneNode(true).children
+                        // );
 
-                        reviewsContainer.append(...newElements);
-                        masonry.appended(newElements);
+                        // reviewsContainer.append(...newElements);
+                        // masonry.appended(newElements);
                         loader.style.display = "none";
                         loading = false;
                     }, 1000);

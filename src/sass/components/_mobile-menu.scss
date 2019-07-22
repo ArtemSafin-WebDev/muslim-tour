@@ -34,14 +34,8 @@
   &:before {
     z-index: 0;
     
-    background-color: rgba(black, .8);
-    transform: scale(1.35);
-    transition: backdrop-filter .2s cubic-bezier(.51, .27, .42, .18);
-    will-change: transform, filter;
-    @supports ((-webkit-backdrop-filter: blur(5vw)) or (backdrop-filter: blur(5vw))) {
-      background-color: rgba(black, .3);
-      backdrop-filter: blur(5vw);
-    }
+    background-color: rgba(black, .4);
+    
   }
 
   &:after {
@@ -87,8 +81,8 @@
   }
 
   &__list {
-    padding-left: 19px;
-    padding-right: 19px;
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -162,7 +156,9 @@
     flex-direction: column;
 
     margin: auto 0 0;
-    padding: rem(20) var(--mobile-menu-spacer-r) 0 var(--mobile-menu-spacer-l);
+    padding: 0 var(--content-padding);
+    padding-top: rem(20);
+    
 
     font-size: rem(20.64);
     line-height: 1.6;
