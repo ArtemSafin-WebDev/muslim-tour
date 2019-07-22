@@ -32,18 +32,33 @@
 
         line-height: 0.98;
         margin-top: auto;
-        margin: auto 0;
-        
+        margin-bottom: 5rem;
+        display: flex;
+        align-items: center;
         &-link {
             opacity: 0.5;
             transition: all 0.2s;
             margin-right: 3rem;
+            &:not(.active) {
+                display: none;
+            }
+            &:only-child {
+                opacity: 1 !important;
+                display: block !important;
+            }
+
             &.active {
                 opacity: 1;
             }
             &:link,
             &:visited {
                 color: white;
+            }
+
+            @media screen and (max-width: 480px) {
+                &:not(.active) {
+                    display: block;
+                }
             }
         }
     }
