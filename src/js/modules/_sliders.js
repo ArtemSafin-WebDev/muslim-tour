@@ -213,6 +213,7 @@ let sideSlider = new Swiper(".swiper--side .swiper-container", {
     slideToClickedSlide: true,
     longSwipes: true,
     longSwipesMs: 600,
+    autoHeight: true,
     effect: "fade",
     preventClicksPropagation: false,
     pagination: {

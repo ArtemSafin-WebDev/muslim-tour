@@ -1,7 +1,15 @@
 .tour-route {
   $tour-route-step-width: rem(37);
 
-  &, &__item {
+  & {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__item {
+    
+
+
     display: flex;
     align-items: flex-start;
   }
@@ -36,7 +44,8 @@
 
   &__type, &__date {
     flex: 0 1 var(--tour-route-capt-size, rem(140));
-
+    width: 105px;
+    flex-shrink: 0;
     white-space: nowrap;
   }
 
@@ -55,7 +64,8 @@
     align-items: center;
     position: relative;
     margin-left: rem(25);
-    
+    width: 20%;
+    flex-grow: 1;
     &::after {
       content: '';
       height: 25px;
@@ -129,7 +139,7 @@
         order: 0;
         background-color: #fff;
         padding: 0 5px;
-        padding-left: 7px;
+        // padding-left: 7px;
         color: #b0b0b0;
         position: absolute;
         left: 0;
@@ -198,6 +208,9 @@
     &__item {
       position: relative;
       flex-flow: row wrap;
+
+
+      
     }
 
     &__steps {

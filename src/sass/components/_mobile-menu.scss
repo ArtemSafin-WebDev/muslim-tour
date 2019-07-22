@@ -9,8 +9,8 @@
   left: 0;
   z-index: 1000;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   color: $color-light;
 
@@ -33,18 +33,20 @@
 
   &:before {
     z-index: 0;
-
-    background: $home-bg-blur no-repeat center center / cover;
-
-    filter: blur(rem(23));
+    
+    background-color: rgba(black, .8);
     transform: scale(1.35);
-    transition: filter .2s cubic-bezier(.51, .27, .42, .18);
+    transition: backdrop-filter .2s cubic-bezier(.51, .27, .42, .18);
     will-change: transform, filter;
+    @supports ((-webkit-backdrop-filter: blur(5vw)) or (backdrop-filter: blur(5vw))) {
+      background-color: rgba(black, .3);
+      backdrop-filter: blur(5vw);
+    }
   }
 
   &:after {
     z-index: 1;
-    background-image: linear-gradient(to bottom, rgba(41, 23, 0, 0), rgba(34, 22, 0, 0.84));
+    // background-image: linear-gradient(to bottom, rgba(41, 23, 0, 0), rgba(34, 22, 0, 0.84));
   }
 
   &__content, &__list, &__bottom, &__top {
@@ -85,8 +87,8 @@
   }
 
   &__list {
-    padding: 0 var(--mobile-menu-spacer-r) 0 var(--mobile-menu-spacer-l);
-
+    padding-left: 19px;
+    padding-right: 19px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -108,10 +110,9 @@
   }
 
   &__item {
-    padding: rem(16) 0 rem(27.2);
-
-    font-size: rem(21.6);
-    font-weight: bold;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 1px;
 
     &--sub {
       position: relative;

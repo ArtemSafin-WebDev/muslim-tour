@@ -1,13 +1,13 @@
 
 let ticker = document.querySelector(".ticker__text");
 let initialAnimationPlayed = false;
-let animationDurationMultiplier = 5;
+let animationDurationMultiplier = 7;
 
 
 function setAnimationDuration() {
     let tickerWidth = ticker.offsetWidth;
     let viewportWidth = window.innerWidth;
-    let animationDuration = (tickerWidth / viewportWidth) * animationDurationMultiplier;
+    let animationDuration = 20;
     ticker.style.animationDuration = `${animationDuration}s`;
 }
 

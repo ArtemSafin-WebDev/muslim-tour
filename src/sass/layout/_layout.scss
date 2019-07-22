@@ -12,8 +12,20 @@
   &__section {
     --layout-section-top-gutter: #{rem(45)};
 
-    &:nth-child(2):not(&--travel):not(&--ticker), &.second:not(&--travel):not(&--ticker) {
-      margin-top: var(--layout-section-top-gutter, 0);
+    // &:nth-child(2):not(&--travel):not(&--ticker), &.second:not(&--travel):not(&--ticker) {
+    //   margin-top: var(--layout-section-top-gutter, 0);
+    // }
+
+
+    &--ticker {
+      overflow-x: hidden;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 40px;
+        background-color: transparent;
+        display: block;
+      }
     }
 
     &--offer {
