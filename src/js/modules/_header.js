@@ -92,8 +92,10 @@ $mainMenuClose.click(function () {
 $mobMenu.find('.mobile-menu__item--sub').click(function () {
     if ($(this).hasClass('mobile-menu__item--sub-open')) {
         $(this).removeClass('mobile-menu__item--sub-open')
+        $(this).find('ul').slideUp()
     } else {
         $(this).addClass('mobile-menu__item--sub-open')
+        $(this).find('ul').slideDown()
     }
 });
 
