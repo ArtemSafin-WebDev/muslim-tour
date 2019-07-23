@@ -139,6 +139,8 @@
             max-height: none;
             margin: 0 auto;
             width: 80%;
+            display: block;
+            object-fit: initial;
         }
 
         &:not(&--doing) {
