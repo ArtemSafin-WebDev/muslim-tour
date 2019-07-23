@@ -42,5 +42,20 @@ if (captionLinks && captionLinks.length >= 2) {
         link.addEventListener("click", setActiveTab);
     });
 
+
+
+    function moveActiveMenuItemToBeginning() {
+        const tabMenu = document.querySelector('.tab-menu.active')
+        let activeTabItem;
+        if (tabMenu) {
+            activeTabItem = tabMenu.querySelector('.tab-menu__tab--is-active');
+        }    
+        if (activeTabItem) {
+            activeTabItem.parentElement.insertBefore(activeTabItem, activeTabItem.parentElement.firstChild);
+        }
+    }
+
+    moveActiveMenuItemToBeginning();
+
     
 }
