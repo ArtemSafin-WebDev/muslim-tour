@@ -101,6 +101,10 @@
         color: var(--headers-text-color);
     }
 
+    &--news {
+        height: 20rem;
+    }
+
     &--is-fade {
         &,
         &-v {

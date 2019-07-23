@@ -1,6 +1,7 @@
 .hint {
-  display: flex;
-
+  // display: flex;
+  // flex-direction: column;
+  display: block;
   width: 100%;
 
   margin: var(--hint-offset, 0 0 rem(85));

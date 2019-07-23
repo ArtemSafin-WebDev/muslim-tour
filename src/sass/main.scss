@@ -1099,6 +1099,9 @@ li.dv__more.active > a:before {
 ._aside_empty {
   width: var(--aside-width,21rem);
   height: 50px;
+  @include phones {
+    height: 0;
+  }
 }
 
 #lb_button-call {
