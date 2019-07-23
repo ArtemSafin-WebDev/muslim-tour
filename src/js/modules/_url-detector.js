@@ -6,9 +6,10 @@ const dvTabs = document.querySelector(".dv__tabs");
 if (link && select && dvTabs) {
     let tourID = 1;
     let month = null;
+    let baseURL = '';
 
     function setURL() {
-        link.href = `/?tourID=${tourID}` + (month ? `&monthID=${month}` : "");
+        link.href = `${baseURL}?tourID=${tourID}` + (month ? `&monthID=${month}` : "");
     }
 
     function hasMonth(element) {
@@ -20,7 +21,12 @@ if (link && select && dvTabs) {
     }
 
     function gatherInfo() {
+        console.log('Gathering info')
         const tourInfo = select.querySelector(`[data-id="${tourID}"]`);
+        if (tourInfo) {
+            baseURL = tourInfo.getAttribute('data-url');
+            console.log('Setting Base URL', baseURL);
+        }
         if (hasMonth(tourInfo)) {
             const b = tourInfo.querySelector("b");
             let newMonth;
