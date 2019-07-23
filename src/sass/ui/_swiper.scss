@@ -335,7 +335,9 @@
     --swiper-nav-left-spacer: #{rem(243)};
 
     .swiper-slide__image {
-      max-width: rem(298);
+      max-width: none;
+      width: 100%;
+      height: auto;
     }
 
 
