@@ -153,6 +153,26 @@
     flex: 1 1 calc((100% / var(--schedule-list-column)) - var(--schedule-list-grap));
 
     margin: 0 calc(var(--schedule-list-grap) / 2) var(--schedule-list-grap);
+
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(white, .6);
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s, visibility 0s linear .3s;
+    }
+    &.disabled {
+      opacity: 1;
+      visibility: visible;
+      transition: all .3s;
+    }
   }
 
   @include max-wide(tablet) {

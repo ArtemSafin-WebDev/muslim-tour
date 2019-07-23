@@ -16,11 +16,11 @@ if (reviewsContainer) {
         masonry.layout();
     });
 
-    // let page = 1;
+    let page = 1;
     let loading = false;
 
     function scrollToTheBottomHandler() {
-        // let newElements = [];
+        let newElements = [];
 
         if($('.reviews__list.more').children().length) {
             if (!loading) {
