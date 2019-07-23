@@ -8,12 +8,16 @@
 
     margin: (-$topOffset) 0 0;
 
+    background-color: orange;
     background: var(--page-header-image) no-repeat top center fixed;
     background-size: var(--page-header-bg-width, auto) var(--page-header-height);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  
 
     &__content {
         @extend .container;
-
+        
         position: relative;
         z-index: 1;
 
@@ -209,10 +213,16 @@
         }
 
         .page-header__caption {
-            margin: auto 0 0;
+            // margin: auto 0 0;
+            margin: 0;
             font-size: rem(40);
             line-height: 1.15;
-            margin: 0;
+            margin-top: auto;
+        }
+
+
+        .page-header__crumbs + .page-header__caption {
+            margin-top: 0;
         }
 
         .page-header__bottom {

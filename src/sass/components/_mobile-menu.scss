@@ -17,6 +17,15 @@
   overflow: hidden;
   -webkit-overflow-scrolling: auto;
   transition: all .3s cubic-bezier(.51, .27, .42, .18);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility 0s linear .3s;
+
+  &--is-show {
+    transition: all .3s;
+    opacity: 1;
+    visibility: visible;
+  }
 
   &:before, &:after {
     position: absolute;
@@ -196,7 +205,5 @@
     color: inherit;
   }
 
-  &:not(&--is-show) {
-    display: none;
-  }
+  
 }
