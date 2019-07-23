@@ -26,6 +26,12 @@ if (captionLinks && captionLinks.length >= 2) {
             activeTab = newActiveTab;
             activeTab.classList.add('active');
         }
+
+        moveActiveLinkToBeginning();
+    }
+
+    function moveActiveLinkToBeginning() {
+        activeLink.parentElement.insertBefore(activeLink, activeLink.parentElement.firstChild);
     }
 
 

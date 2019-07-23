@@ -9,6 +9,10 @@
     margin-bottom: rem(43);
   }
 
+  .swiper-slide {
+    height: auto;
+  }
+
   .trips-slider__swiper {
     width: var(--full-slider-offset);
 
