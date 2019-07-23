@@ -64,6 +64,9 @@ function moveElementDown(item) {
         $(".dv__f-window[data-id=\""+id+"\"], .dv__f-tabs span[data-id=\""+id+"\"]").addClass("active");
 
         var text = $(this).text();
+        // console.log(text)
+        var event = new CustomEvent('tourtypeclick', { detail: id, bubbles: true });
+        $(this)[0].dispatchEvent(event);
         $("span:nth-child(2)", $(this).closest(".dv__tabs")).text($("span:nth-child(1)", $(this).closest(".dv__tabs")).text());
         $("span:nth-child(1)", $(this).closest(".dv__tabs")).text(text);
         if (id == "1") {
@@ -118,7 +121,8 @@ function moveElementDown(item) {
             $(this).closest("li").addClass("active");
             $(".dv_sm").css("margin-top", (-index*40)+"px");
             $("b", $(this).closest(".dv__select-wrap.dv__static")).text($(this).text());
-
+            var event = new CustomEvent('tourmonthclick', { detail: $(this)[0].dataset.month, bubbles: true });
+            $(this)[0].dispatchEvent(event)
             dvTimeoutAnimBg = setTimeout(function(){
                 $("#mainBg").click();
                 clearTimeout(dvTimeoutAnimBg);
@@ -162,6 +166,7 @@ function moveElementDown(item) {
             $(".dv__select-wrap.view").removeClass("view");
             $(".dv__select-wrap[data-id=\""+id+"\"]").addClass("view");
             var text = $(this).text();
+            
             $(".dv__tabs span:nth-child(2)").text($(".dv__tabs span:nth-child(1)").text());
             $(".dv__tabs span:nth-child(1)").text(text);
             if (id == "1") {
