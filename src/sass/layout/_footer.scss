@@ -184,8 +184,8 @@
 
     &-name {
       margin-bottom: rem(8);
-
-      white-space: nowrap;
+      line-height: 1.2;
+      // white-space: nowrap;
 
       > * {
         margin-left: rem(20);
