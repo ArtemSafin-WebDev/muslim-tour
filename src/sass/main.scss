@@ -148,7 +148,7 @@
     object-fit: cover;
   }
 }
-.dv__bg video.active {z-index: 2;}
+.dv__bg video.active {z-index: 2; margin-top: 0 !important;}
 .dv__bg video:nth-child(2) {
   margin-top: -145vh;
 }
