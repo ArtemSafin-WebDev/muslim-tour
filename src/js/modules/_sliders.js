@@ -202,11 +202,11 @@ if (lettersSliderContainer) {
     new Swiper(lettersSliderContainer, options);
 }
 
-const sideSwiperContainer = document.querySelector(
-    ".swiper--side .swiper-container"
+const sideSwiperContainers = Array.prototype.slice.call(
+    document.querySelectorAll(".swiper--side .swiper-container")
 );
 
-if (sideSwiperContainer) {
+sideSwiperContainers.forEach(sideSwiperContainer => {
     const slideCount = Array.prototype.slice.call(
         sideSwiperContainer.querySelectorAll(".swiper-slide")
     ).length;
@@ -259,9 +259,11 @@ if (sideSwiperContainer) {
             prevEl: ".swiper-button-prev"
         };
     } else {
-        sideSwiperContainer.querySelector('.swiper-button-next').style.display = 'none';
-        sideSwiperContainer.querySelector('.swiper-button-prev').style.display = 'none';
+        sideSwiperContainer.querySelector(".swiper-button-next").style.display =
+            "none";
+        sideSwiperContainer.querySelector(".swiper-button-prev").style.display =
+            "none";
     }
 
-    let sideSlider = new Swiper(sideSwiperContainer, options);
-}
+    new Swiper(sideSwiperContainer, options);
+});
