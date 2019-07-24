@@ -456,6 +456,16 @@
           // color: $color-light;
 
         }
+
+
+        &__right {
+          width: 100%;
+          img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+          }
+        }
       }
 
       .swiper-bottom {
