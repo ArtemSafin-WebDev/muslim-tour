@@ -45,17 +45,27 @@ if (captionLinks && captionLinks.length >= 2) {
 
 
     function moveActiveMenuItemToBeginning() {
-        const tabMenu = document.querySelector('.tab-menu.active')
-        let activeTabItem;
-        if (tabMenu) {
-            activeTabItem = tabMenu.querySelector('.tab-menu__tab--is-active');
-        }    
-        if (activeTabItem) {
-            activeTabItem.parentElement.insertBefore(activeTabItem, activeTabItem.parentElement.firstChild);
-        }
+        const activeTabItem = document.querySelector('.tab-menu.active .tab-menu__tab--is-active');
+
+        const activeTabItemScrollingContainer = activeTabItem.parentElement.parentElement;
+        const activeTabOffsetLeft = activeTabItem.offsetLeft;
+        const paddingLeft = parseFloat(window.getComputedStyle(activeTabItem.parentElement).getPropertyValue('padding-left'))
+
+        // console.log('Scroll Width', containerScrollWidth);
+        // console.log('Offset left', activeTabOffsetLeft);
+        // console.log('Padding left', paddingLeft)
+        // console.log(activeTabOffsetLeft - paddingLeft)
+
+        activeTabItemScrollingContainer.scrollLeft = activeTabOffsetLeft - paddingLeft;
+        
     }
 
     moveActiveMenuItemToBeginning();
+
+
+    const debouncedmoveActiveMenuItemToBeginning = _.debounce(moveActiveMenuItemToBeginning, 300);
+
+    window.addEventListener('resize', debouncedmoveActiveMenuItemToBeginning);
 
     
 }
