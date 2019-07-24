@@ -10,11 +10,11 @@ let reviewsSlider = new Swiper(".swiper--reviews .swiper-container", {
     }
 });
 
-const newsSliderContainer = document.querySelector(
-    ".swiper--news .swiper-container"
+const newsSliderContainers = Array.prototype.slice.call(
+    document.querySelectorAll(".swiper--news .swiper-container")
 );
 
-if (newsSliderContainer) {
+newsSliderContainers.forEach(newsSliderContainer => {
     const slideCount = Array.prototype.slice.call(
         newsSliderContainer.querySelectorAll(".swiper-slide")
     ).length;
@@ -28,19 +28,13 @@ if (newsSliderContainer) {
         },
         breakpoints: {
             1024: {
-                // slidesPerView: 4,
                 spaceBetween: 48
             },
-            768: {
-                // slidesPerView: 3,
-            },
+            768: {},
             640: {
-                // slidesPerView: 'auto',
-                // slidesPerView: 1,
                 spaceBetween: 42
             },
             320: {
-                // slidesPerView: 1,
                 spaceBetween: 1520
             }
         }
@@ -51,13 +45,13 @@ if (newsSliderContainer) {
     }
 
     new Swiper(newsSliderContainer, options);
-}
+});
 
-const tripsSliderContainer = document.querySelector(
-    ".swiper--trips .swiper-container"
+const tripsSliderContainers = Array.prototype.slice.call(
+    document.querySelectorAll(".swiper--trips .swiper-container")
 );
 
-if (tripsSliderContainer) {
+tripsSliderContainers.forEach(tripsSliderContainer => {
     const slideCount = Array.prototype.slice.call(
         tripsSliderContainer.querySelectorAll(".swiper-slide")
     ).length;
@@ -67,10 +61,8 @@ if (tripsSliderContainer) {
         slidesPerView: "auto",
         breakpoints: {
             768: {
-                // slidesPerView: 2,
             },
             640: {
-                // slidesPerView: 2,
                 spaceBetween: 20
             },
             320: {
@@ -88,13 +80,13 @@ if (tripsSliderContainer) {
     }
 
     new Swiper(tripsSliderContainer, options);
-}
+});
 
-const articlesSliderContainer = document.querySelector(
-    ".swiper--articles .swiper-container"
+const articlesSliderContainers = Array.prototype.slice.call(
+    document.querySelectorAll(".swiper--articles .swiper-container")
 );
 
-if (articlesSliderContainer) {
+articlesSliderContainers.forEach(articlesSliderContainer => {
     const slideCount = Array.prototype.slice.call(
         articlesSliderContainer.querySelectorAll(".swiper-slide")
     ).length;
@@ -104,7 +96,6 @@ if (articlesSliderContainer) {
         loop: false,
         breakpoints: {
             640: {
-                // slidesPerView: 2,
                 spaceBetween: 15
             }
         },
@@ -118,48 +109,46 @@ if (articlesSliderContainer) {
     }
 
     new Swiper(articlesSliderContainer, options);
-}
-
-let videoSliderThumbs = new Swiper(".swiper--video .swiper-thumbs", {
-    spaceBetween: 16,
-    slidesPerView: 7,
-    // loop: false,
-    freeMode: true,
-    // loopedSlides: 8,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-        640: {
-            spaceBetween: 10,
-            slidesPerView: 3
-            // loopedSlides: 4
-            // slidesPerView: 'auto',
-            // slidesPerView: 1,
-            // spaceBetween: 42,
-        }
-    }
 });
 
-let videoSliderTop = new Swiper(".swiper--video .swiper-top", {
-    speed: 600,
-    effect: "fade",
-    spaceBetween: 16,
-    // load: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    },
-
-    thumbs: {
-        swiper: videoSliderThumbs
-    }
-});
-
-const lettersSliderContainer = document.querySelector(
-    ".swiper--letters .swiper-container"
+const videoSliders = Array.prototype.slice.call(
+    document.querySelectorAll(".swiper--video")
 );
 
-if (lettersSliderContainer) {
+videoSliders.forEach(video => {
+    let videoSliderThumbs = new Swiper(video.querySelector(".swiper-thumbs"), {
+        spaceBetween: 16,
+        slidesPerView: 7,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            640: {
+                spaceBetween: 10,
+                slidesPerView: 3
+            }
+        }
+    });
+
+    new Swiper(video.querySelector(".swiper-top"), {
+        speed: 600,
+        effect: "fade",
+        spaceBetween: 16,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        thumbs: {
+            swiper: videoSliderThumbs
+        }
+    });
+});
+
+const letterSliderContainers = Array.prototype.slice.call(
+    document.querySelectorAll("..swiper--letters .swiper-container")
+);
+
+letterSliderContainers.forEach(lettersSliderContainer => {
     const slideCount = Array.prototype.slice.call(
         lettersSliderContainer.querySelectorAll(".swiper-slide")
     ).length;
@@ -181,15 +170,10 @@ if (lettersSliderContainer) {
         },
         breakpoints: {
             1024: {
-                // slidesPerView: 4,
                 spaceBetween: 48
             },
-            768: {
-                // slidesPerView: 3,
-            },
+            768: {},
             640: {
-                // slidesPerView: 'auto',
-                // slidesPerView: 1,
                 spaceBetween: 24
             }
         }
@@ -200,7 +184,7 @@ if (lettersSliderContainer) {
     }
 
     new Swiper(lettersSliderContainer, options);
-}
+});
 
 const sideSwiperContainers = Array.prototype.slice.call(
     document.querySelectorAll(".swiper--side .swiper-container")
