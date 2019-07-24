@@ -145,7 +145,7 @@ videoSliders.forEach(video => {
 });
 
 const letterSliderContainers = Array.prototype.slice.call(
-    document.querySelectorAll("..swiper--letters .swiper-container")
+    document.querySelectorAll(".swiper--letters .swiper-container")
 );
 
 letterSliderContainers.forEach(lettersSliderContainer => {
