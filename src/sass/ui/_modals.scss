@@ -71,7 +71,7 @@ $modal-width: rem(600);
 
     max-width: var(--modal-width-content);
     width: var(--modal-width-content);
-    min-height: calc(100% - (#{rem(16)} * 2));
+    height: calc(100% - (#{rem(16)} * 2));
 
     margin: $modal-dialog-margin;
 
@@ -131,7 +131,9 @@ $modal-width: rem(600);
     display: flex;
     flex-direction: column;
     width: 100%;
-
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background-color: $modal-content-bg;
     background-clip: padding-box;
 

@@ -396,11 +396,14 @@
 
     .swiper-slide {
       display: flex;
-
+      @include phones {
+        flex-direction: column;
+      }
       &__left {
         flex: 0 0 var(--swiper-slide-left-width);
 
         padding-right: 10%;
+        
       }
 
       &__right {
@@ -445,11 +448,12 @@
       .swiper-slide {
 
         &__left {
-          position: absolute;
-          top: rem(20);
-          left: rem(20);
-
-          color: $color-light;
+          // position: absolute;
+          // top: rem(20);
+          // left: rem(20);
+          padding-right: 0;
+          margin-bottom: 3rem;
+          // color: $color-light;
 
         }
       }
