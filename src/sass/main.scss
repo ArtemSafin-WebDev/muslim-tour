@@ -129,16 +129,16 @@
     bottom: 0;
     z-index: 3;
 }
-.dv__bg video {
-    width: 130vw;
-    height: 130vh;
-    min-height: 130%;
-    margin-left: -15vw;
-    margin-top: -15vh;
-    filter: blur(2vw);
-    position: relative;
+.dv__bg video,
+.dv__bg img {
     transition: filter 0.3s;
-
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
     @include max-wide(tablet) {
         min-height: auto;
         position: absolute;
@@ -149,9 +149,9 @@
     }
 }
 
-// .dv__bg.active video {
-//   filter: blur(0);
-// }
+.dv__bg video {
+    filter: blur(2vw);
+}
 
 .landing-main {
     transition: filter 0.35s;
@@ -170,20 +170,25 @@
 }
 
 .home-modal-shown .dv__header-wrap {
-  position: fixed;
+    position: fixed;
 }
 
 .home-modal-shown .dv__burger {
-  position: fixed;
-  right: 20px;
+    position: fixed;
+    right: 20px;
 }
 
-.dv__bg video.active {
+.dv__bg video.active,
+.dv__bg img.active {
     z-index: 2;
-    margin-top: 0 !important;
+    opacity: 1 !important;
+
 }
-.dv__bg video:nth-child(2) {
-    margin-top: -145vh;
+.dv__bg video:not(.active),
+.dv__bg img:not(.active) {
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .3s;
 }
 
 .dv__layout--wrap {
@@ -854,7 +859,6 @@ body .dv__mob-menu {
     padding-top: 80px;
 
     transition: margin-top 0.35s, opacity 0.35s, visibility 0.35s;
-   
 }
 
 .dv__popup-direction {

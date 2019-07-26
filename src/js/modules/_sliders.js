@@ -207,7 +207,7 @@ sideSwiperContainers.forEach(sideSwiperContainer => {
         longSwipes: true,
         longSwipesMs: 600,
         autoHeight: true,
-        effect: "fade",
+        // effect: "fade",
         preventClicksPropagation: false
     };
 

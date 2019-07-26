@@ -21,11 +21,11 @@ if (link && select && dvTabs) {
     }
 
     function gatherInfo() {
-        console.log('Gathering info')
+        
         const tourInfo = select.querySelector(`[data-id="${tourID}"]`);
         if (tourInfo) {
             baseURL = tourInfo.getAttribute('data-url');
-            console.log('Setting Base URL', baseURL);
+            
         }
         if (hasMonth(tourInfo)) {
             const b = tourInfo.querySelector("b");

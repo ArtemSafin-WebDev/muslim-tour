@@ -57,6 +57,14 @@
     .swiper-button-prev, .swiper-button-next {
       margin: 0;
     }
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
   }
 
   &--letters {
@@ -394,9 +402,30 @@
   &--side {
     --swiper-slide-left-width: 38.675213675213675%;
 
+
+    .swiper-bottom {
+      margin-top: 2rem !important;
+    }
+
+    .swiper-pagination {
+      align-items: center;
+    }
+
+    .swiper-pagination-bullet {
+      outline: none;
+      align-items: center !important;
+      
+    }
+
+    .swiper-nav {
+      margin-right: 1rem;
+      position: relative;
+      
+    }
+
     .swiper-slide {
       display: flex;
-      @include phones {
+      @include desktop {
         flex-direction: column;
       }
       &__left {
@@ -443,7 +472,7 @@
       }
     }
 
-    @include max-wide(phones) {
+    @include desktop {
 
       .swiper-slide {
 

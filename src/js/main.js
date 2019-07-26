@@ -88,12 +88,16 @@ function moveElementDown(item) {
             var v2 = $(".dv__bg video:nth-child(2)");
             var v3 = $(".dv__inside--video-wrap video:nth-child(1)");
             var v4 = $(".dv__inside--video-wrap video:nth-child(2)");
+            var v5 = $(".dv__bg img:nth-child(1)");
+            var v6 = $(".dv__bg img:nth-child(2)");
 
             if (id == 1) {
                 v1.addClass("active");
                 v2.removeClass("active");
                 v3.addClass("active");
                 v4.removeClass("active");
+                v5.addClass("active");
+                v6.removeClass("active");
                 // v1[0].play();
                 // v2[0].pause();
                 // v3[0].play();
@@ -103,6 +107,8 @@ function moveElementDown(item) {
                 v1.removeClass("active");
                 v4.addClass("active");
                 v3.removeClass("active");
+                v5.removeClass("active");
+                v6.addClass("active");
                 // v2[0].play();
                 // v1[0].pause();
                 // v4[0].play();
@@ -183,12 +189,16 @@ function moveElementDown(item) {
             var v2 = $(".dv__bg video:nth-child(2)");
             var v3 = $(".dv__inside--video-wrap video:nth-child(1)");
             var v4 = $(".dv__inside--video-wrap video:nth-child(2)");
+            var v5 = $(".dv__bg img:nth-child(1)");
+            var v6 = $(".dv__bg img:nth-child(2)");
 
             if (id == 1) {
                 v1.addClass("active");
                 v2.removeClass("active");
                 v3.addClass("active");
                 v4.removeClass("active");
+                v5.addClass("active")
+                v6.removeClass("active")
                 // v1[0].play();
                 // v2[0].pause();
                 // v3[0].play();
@@ -198,6 +208,8 @@ function moveElementDown(item) {
                 v1.removeClass("active");
                 v4.addClass("active");
                 v3.removeClass("active");
+                v5.removeClass("active")
+                v6.addClass("active")
                 // v2[0].play();
                 // v1[0].pause();
                 // v4[0].play();
