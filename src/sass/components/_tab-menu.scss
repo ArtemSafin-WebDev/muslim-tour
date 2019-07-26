@@ -3,7 +3,9 @@
  
   transition: opacity .2s, visibility 0s linear .2s;
   
-  
+  &:not(:first-child) {
+    display: none;
+  }
   
   &__content {
     display: flex;

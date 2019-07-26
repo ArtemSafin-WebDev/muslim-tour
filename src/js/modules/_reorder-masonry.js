@@ -1,5 +1,3 @@
-
-
 const reviewsContainer = document.querySelector(".reviews__list.main");
 const reviewsTempContainer = document.querySelector(".reviews__list.temp");
 const reviewsMoreContainer = document.querySelector(".reviews__list.more");
@@ -18,44 +16,34 @@ if (reviewsContainer) {
 
     let page = 1;
     let loading = false;
-
+    const uploadAtOnce = 10;
+    const reviewsToAdd = Array.prototype.slice.call(
+        document.querySelector(".reviews__list.more").children
+    );
+    
     function scrollToTheBottomHandler() {
-        let newElements = [];
-
-        if($('.reviews__list.more').children().length) {
-            if (!loading) {
-                if (
-                    window.pageYOffset >=
-                    reviewsContainer.scrollTop + reviewsContainer.offsetHeight
-                ) {
+        const reviewsLeft = reviewsToAdd.length - ((page - 1) * uploadAtOnce);
+       
+        if (!loading && reviewsLeft > 0) {
+            if (
+                window.pageYOffset >=
+                reviewsContainer.scrollTop + reviewsContainer.offsetHeight
+            ) {
+                loader.style.display = "block";
+                loading = true;
+                setTimeout(function() {
+                    const startIndex = (page - 1) * uploadAtOnce;
+                    let endIndex = page * uploadAtOnce;
+                    if (endIndex > reviewsToAdd.length + 1) {
+                        endIndex = reviewsToAdd.length + 1;
+                    }
+                    const newElements = reviewsToAdd.slice(startIndex, endIndex);
+                    reviewsContainer.append(...newElements);
+                    masonry.appended(newElements);
                     page++;
-                    loader.style.display = "block";
-                    loading = true;
-                    setTimeout(function () {
-                        var i = 0;
-                        $('.reviews__list.temp').empty();
-                        $('.reviews__list.more').children().each(function () {
-                            if (i >= 10)
-                                return;
-                            i++;
-                            var item = $(this);
-                            $('.reviews__list.temp').append(
-                                $('<div />')
-                                    .attr('class', item.attr('class'))
-                                    .html(item.html())
-                            );
-                            item.remove();
-                        });
-                        newElements = Array.prototype.slice.call(
-                            reviewsTempContainer.cloneNode(true).children
-                        );
-
-                        reviewsContainer.append(...newElements);
-                        masonry.appended(newElements);
-                        loader.style.display = "none";
-                        loading = false;
-                    }, 1000);
-                }
+                    loader.style.display = "none";
+                    loading = false;
+                }, 1000);
             }
         }
     }
