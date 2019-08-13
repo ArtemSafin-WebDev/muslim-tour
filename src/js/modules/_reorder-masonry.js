@@ -1,6 +1,4 @@
 const reviewsContainer = document.querySelector(".reviews__list.main");
-const reviewsTempContainer = document.querySelector(".reviews__list.temp");
-const reviewsMoreContainer = document.querySelector(".reviews__list.more");
 
 if (reviewsContainer) {
     const masonry = new Masonry(reviewsContainer, {

@@ -119,16 +119,16 @@
     overflow: hidden;
     z-index: -1;
 }
-.dv__bg:before {
-    content: "";
-    position: absolute;
-    background: rgba(0, 0, 0, 0.3);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-}
+// .dv__bg:before {
+//     content: "";
+//     position: absolute;
+//     background: rgba(0, 0, 0, 0.3);
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     z-index: 3;
+// }
 .dv__bg video,
 .dv__bg img {
     transition: filter 0.3s;
