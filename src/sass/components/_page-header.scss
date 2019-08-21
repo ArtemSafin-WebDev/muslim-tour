@@ -44,7 +44,12 @@
             opacity: 0.85;
             transition: all 0.2s;
             margin-right: 3rem;
-            
+            &:first-child {
+                margin-left: 2.7rem;
+                @include laptop {
+                    margin-left: .05rem;
+                }
+            }
             &:only-child {
                 opacity: 1 !important;
                 display: block !important;

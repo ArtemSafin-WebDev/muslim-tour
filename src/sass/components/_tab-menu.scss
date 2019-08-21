@@ -43,12 +43,13 @@
   @include max-wide(laptop) {
     display: grid;
 
-    // margin-left: calc(-0px - var(--content-padding));
+    margin-left: calc(-0px - var(--content-padding));
+    margin-right: calc(-0px - var(--content-padding));
 
     overflow-x: auto;
     scroll-behavior: smooth !important;
     -webkit-overflow-scrolling: touch;
-
+    
     &__content {
       width: auto;
 
